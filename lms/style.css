@@ -1,0 +1,18 @@
+body{
+    font-family: 'Roboto';
+}
+.navtop{
+    display: flex;
+    justify-content: space-between; 
+    padding: 0px 70px; 
+    background: #fff; 
+    margin: 0;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.1);
+}
+.navtopleft{
+    display: flex;
+}
+.navtopitems{
+    border-right: 1px solid grey;
+    padding: 5px;
+}
