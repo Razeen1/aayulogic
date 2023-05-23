@@ -1,0 +1,302 @@
+body{
+    background:#fff;
+    font-family: 'Poppins';
+    margin: 0;
+}
+
+.navbar{
+    display: flex; 
+    justify-content: space-between; 
+    padding: 1rem 1.5rem; 
+    background: #fff; 
+    margin: 0;
+}
+.navimg{
+    width: auto;
+    height: 50px;
+}
+.navbar ul{
+    display: flex;
+    list-style-type: none;
+    font-size: 14px;
+    line-height: 22px;
+
+}
+.navbar li{
+    padding-left:1.5rem;
+}
+.header{
+    background-color: #05acec;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    
+}
+.header h1{
+    padding-top: 80px;
+    padding-bottom: 0px;
+    font-size: 60px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.header img{
+    width:700px;
+    height:auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top:20px;
+    
+}
+.b1{
+    background-color: rgba(255, 193, 7) !important;
+    margin-right: 20px;
+}
+.header button:hover{
+    background-color: rgb(255, 255, 255)!important;
+    color:gray;
+}
+.header p{
+    font-size: 16px;
+    line-height: 24px;
+}
+.header button{
+    font-weight: 500;
+    border-radius: 4px;
+    background-color:transparent;
+    border:none;
+    padding: 10px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: whitesmoke;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.1);
+    
+}
+.buttonf {
+    padding: 20px;
+}
+
+.header p{
+    padding-top: 5px;
+}
+
+a:link { 
+    text-decoration: none; 
+    color: rgb(65, 65, 65);
+}
+
+a:visited {
+    text-decoration: none; color: rgb(65, 65, 65);
+}
+
+a:hover { 
+    text-decoration: none; color: black;
+}
+
+a:active {
+    text-decoration: none; color:rgb(0, 238, 255);
+}
+  
+.functionhome{
+    background-color: #fff;
+    align-items: center;
+    text-align: center;
+    padding-top: 0;
+    margin-top: 0;
+}
+.functionhome h1{
+    padding-top: 90px;
+    padding-bottom: 0px;
+    font-size: 30px;
+    margin-bottom: 0;
+    margin-top: 0;
+    color: #05acec;
+}
+.functiontile{
+    display: flex;
+    flex-wrap: wrap;
+    margin:20px 90px;
+    padding:0px 90px;  
+    color: rgba(158, 158, 158);
+    
+}
+.functiontileitems{
+    flex:50%;
+    display: flex;
+    
+}
+.funtxt{
+    display: block;
+    text-align: left;
+    padding-right: 10px;
+}
+.functionhome h1{
+    padding-top: 90px;
+    padding-bottom: 0px;
+    font-size: 30px;
+    margin-bottom: 0;
+    margin-top: 0;
+    color: #05acec;
+}
+h6{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    padding: 0;
+    margin-bottom: 0;
+}
+.funtxt p{
+    font-size: 12px;
+    line-height: 20px;
+    margin-top:0;
+}
+.imgfun img{
+    width: 2.5rem;
+    height:2.5rem;
+    margin-top: 45px;
+}
+.imgfun{
+    padding-right:20px;
+}
+.functiontileitems button{
+    border-radius: 4px;
+    background-color:rgba(255, 193, 7);
+    border:none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    width: 100%;
+}
+.need{
+    margin:20px 100px; 
+    padding:30px 150px;
+    text-align: center;
+}
+.need h1{
+    padding-top: 90px;
+    padding-bottom: 0px;
+    font-size: 30px;
+    margin-bottom: 0;
+    margin-top: 0;
+    color: #05acec;
+}
+.needcardall{
+    display: flex;
+    flex-wrap: wrap;
+    /* margin:20px 100px;
+    padding:30px 150px;   */
+    padding-top: 40px;
+    color: rgb(44, 44, 44);
+}
+.needcard{
+    display: flex;
+    flex:25%;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.needcard h5{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.needcard p{
+    padding-top: 0;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    
+}
+.needcard:hover{
+    border:1px solid #616161;
+    border-radius: 5px;
+}
+.review{
+    display: flex;
+    background-image: linear-gradient(#05acec,#5c6bc0);
+    padding: 60px;
+    text-align: center;
+    color:white;
+
+}
+.review h1{
+    padding: 40px;
+    font-size: 2.5rem;
+}
+.reviewcard{
+    background-color: #fff;
+    color: #616161;
+    max-width: 40%;
+    font-size: small;
+    padding: 30px;
+    border-radius: 5px;
+
+}
+.reviewcard p{
+    padding: 10px;
+}
+.contact{
+    background-image:url(laptop.png);
+    background-color: #05acec;
+    padding: 60px;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    
+
+}
+.contact1{
+    display:flex;
+    margin:20px 70px; 
+    padding:30px 100px;
+}
+.contact h1{
+    padding-top: 60px;
+    padding-bottom: 0px;
+    font-size: 30px;
+    margin-bottom: 0;
+    margin-top: 0;
+    color: #ffffff;
+    text-align: center;
+}
+.form form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+label{
+    color:#fff
+}
+input[type=text], [type=number],textarea{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit]{
+    width: 70%;
+    background-color: #585858;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .socialMedia{
+    color:#fff;
+    
+  }
+  .smicons{
+    background-color: #ffffff5b ;
+    border:1px solid #cfcfcf;
+    padding: 10px;
+  }
