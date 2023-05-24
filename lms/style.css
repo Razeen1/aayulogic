@@ -230,7 +230,8 @@ a:active {
     flex:25%;
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px;
+    padding: 25px;
+   
 }
 .needcard h5{
     padding-bottom: 0;
@@ -245,8 +246,7 @@ a:active {
     
 }
 .needcard:hover{
-    border:1px solid #616161;
-    border-radius: 5px;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.1);
 }
 .needcard img{
     width: 100%;
@@ -275,9 +275,7 @@ a:active {
     margin-top: 15px;
     margin-bottom: 0;
     color: orange;
-    padding-right: 120px;
-    
-    
+    padding-right: 110px;  
 }
 .checked {
     color: orange;
