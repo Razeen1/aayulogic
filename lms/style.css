@@ -288,3 +288,48 @@ a:active {
 .priceinner{
     padding-right:0px ;
 }
+.review{
+    display: flex;
+    background-color: #02bea6;
+    padding: 60px;
+    color:white;
+    align-items: center;
+
+}
+.reviewinner{
+    display:flex;
+    align-items: center;
+    margin: 0 80px;
+    padding: 0 20px;
+}
+.review h1{
+    font-size: 50px;
+    margin: 0;
+}
+.reviewcard{
+    max-width: 40%;
+
+}
+.reviewtext{
+    margin: 0;
+    padding: 40px;
+}
+.reviewtext h5{
+    margin: 0;
+}
+.reviewtext p{
+    font-size: 13px;
+}
+.review button{
+    font-weight: 500;
+    border-radius: 4px;
+    background-color:#ffffff;
+    border:none;
+    padding: 8px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: #02bea6;
+    font-size: 14px;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.1);
+}
