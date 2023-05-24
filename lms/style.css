@@ -477,7 +477,6 @@ i{
     width: 100%;
     height: 1px;
     background: #ffffff;
-    background-image: linear-gradient(to right, #ccc, #ffffff, #ccc);
 }
 .copy{
     font-size: 10px;
