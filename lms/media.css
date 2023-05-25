@@ -1,0 +1,92 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 768px) {
+    .navtop{
+      display: block;
+      padding: 10px;
+    }
+    .navbar{
+      flex-direction: column;
+      padding:5px 20px;
+      align-items: center;
+    
+    }
+    .navtopitems ,.navtopitems{
+      border: none;
+    }
+    .navbar ul{
+      display: block;
+      line-height: 25px;
+      padding: 10px;
+      font-size: 20px;
+    }
+    .navtopitems{
+      padding: 2px;
+    }
+    .navbar li{
+        padding:0;
+    }
+    .selected{
+        border:none;
+    }
+    .herobanner{
+        padding: 5px 10px;
+        text-align: center;
+
+    }
+    .herobanner img{
+        display:none;
+    }
+    .latestcourses{
+        padding: 5px 5px;
+        margin: 5px 10px;
+    }
+    .needcard{
+        padding: 10px 0px;
+        flex: 100%;
+        max-width: 70%;
+    }
+    .courses ,.news,.foot, .choose{
+        padding: 15px;
+        margin: 0px;
+    }
+    .review{
+        flex-direction: column;
+        padding: 5px;
+       
+    }
+    .reviewinner{
+        display: block;
+    }
+    .newscardall{
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+  
+    .functiontile{
+        margin: 0;
+    }
+    .contactsf{
+        flex-direction: column;
+        align-items: center;
+        text-align: center !important;
+    }
+    .footercontact p{
+        text-align: center;
+    }
+    .footercards ul{
+        text-align: center;
+
+      }
+      .herotext{
+        padding: 0;
+        margin: 0;
+      }
+      .signup{
+        display: block;
+      }
+      .needcardall {
+        flex-direction: column;
+        align-items: center;
+      }
+  }
+  
