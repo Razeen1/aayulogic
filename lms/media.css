@@ -16,7 +16,8 @@
     .navbar ul{
       display: block;
       line-height: 25px;
-      padding: 10px;
+      padding: 0px;
+      margin: 0;
       font-size: 20px;
     }
     .navtopitems{
