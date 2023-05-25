@@ -31,8 +31,10 @@
     <div class="divnav">
         <div class="navbar">
             <h5>LMS</h5>
-            <ul class="navitems">
-                <li class="selected"><a href="#">Home</a></li>
+                <ul class="navitems"  id="myTopnav">
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+
+                <li ><a href="#" class="selected">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Features</a></li>
                 <li><a href="#">Blog</a></li>
@@ -380,6 +382,16 @@
             </div>
         </div>
     </div>
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "navitems") {
+          x.className += " responsive";
+        } else {
+          x.className = "navitems";
+        }
+      } 
+    </script>
 </body>
 
 </html>

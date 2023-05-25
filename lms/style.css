@@ -34,9 +34,12 @@ body{
     margin: 0;
     box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.541);
 }
+ul{
+    list-style-type: none;
+}
 .navbar ul{
     display: flex;
-    list-style-type: none;
+    
     font-size: 14px;
     line-height: 22px;
 
@@ -47,6 +50,7 @@ body{
 .selected{
     border: 1px solid rgb(255, 255, 255);
     border-radius: 4px;
+    padding: 10px;
     
 }
 .navbar h5{
@@ -457,6 +461,9 @@ i{
     padding: 10px;
     margin: 0;
 }
+.navbar .icon {
+    display: none;
+  }
 .fa{
     margin-top: 0;
 }
@@ -486,3 +493,14 @@ input:focus{
     border: 2px rgb(255, 255, 255) solid;
     outline: none;
 }
+input[type=checkbox] {
+    display: none;
+    } 
+    
+    /* HAMBURGER MENU */
+    .hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+    }
+    
