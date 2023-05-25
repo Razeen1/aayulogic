@@ -37,9 +37,7 @@
         text-align: center;
 
     }
-    .herobanner img{
-        display:none;
-    }
+    
     .latestcourses{
         padding: 5px 5px;
         margin: 5px 10px;
@@ -102,7 +100,12 @@
     display: block;
   }
 }
-   
+@media screen and (max-width: 1080px) {
+    .herobanner img{
+        display:none;
+    }
+  }
+
      @media screen and (max-width: 768px) {
         .navitems.responsive {position: relative;}
         .navitems.responsive .icon {
