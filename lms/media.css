@@ -93,7 +93,7 @@
       }
   }
   
-  @media(max-width: 768px) {
+  @media screen and (max-width: 768px) {
     .navitems a {display: none;
         padding: 16px 0;}
     .navitems a.icon {
