@@ -15,3 +15,16 @@ textarea{
 h1:hover{
     color:grey!important;
 }
+.topdiv{
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 16px 0 rgba(110, 110, 110, 0.274) !important;
+}
+.upperB, .lowerB, .removeB, .clearB{
+    width:45%;
+}
+@media screen and (max-width: 768px) {
+    .upperB, .lowerB, .removeB, .clearB{
+        width:100%;
+    }
+}

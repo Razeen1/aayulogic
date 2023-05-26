@@ -56,7 +56,7 @@ containerResult.appendChild(p2);
 function container(){
     let container = document.createElement('div');
     container.classList.add('topdiv');
-    container.style.margin = '40px';
+    container.style.margin = '10px';
     container.style.display = 'flex';
     container.style.flexDirection='Column';
     container.style.alignItems='center';
@@ -66,6 +66,10 @@ function container(){
 function container2(){
     let container = document.createElement('div');
     container.classList.add('buttons');
+    container.style.display = 'flex';
+    container.style.flexWrap = 'wrap';
+    container.style.width="100%;"
+    container.style.alignItems="center"
     container.style.padding = '20px';
     return container;
 }
@@ -73,6 +77,7 @@ function container3(){
     let container = document.createElement('div');
     container.classList.add('Result');
     container.style.display = 'flex';
+   
     container.style.alignItems='center';
     return container;
 }
@@ -80,7 +85,7 @@ function createTextArea(){
     let txtarea = document.createElement('textarea');
     txtarea.classList.add("txtArea");
     txtarea.style.width = '100%';
-    txtarea.style.height = '150px';
+    txtarea.style.height = '200px';
     txtarea.style.color= 'white';
     txtarea.style.backgroundColor = 'black';
     txtarea.style.border = 'none';
@@ -99,6 +104,7 @@ function createButtonUpper(){
     buttonUpper.style.color = 'white';
     buttonUpper.style.padding = '10px';
     buttonUpper.style.margin = '10px';
+   
     buttonUpper.innerHTML = 'Covert To Uppercase';
     buttonUpper.onclick=function() { textDisplayUpper(); };
 
@@ -113,6 +119,7 @@ function createButtonLower(){
     buttonLower.style.color = 'white';
     buttonLower.style.padding = '10px';
     buttonLower.style.margin = '10px';
+   
     buttonLower.onclick=function() { textDisplayLower(); };
     buttonLower.innerHTML = 'Covert To Lowercase';
     return buttonLower;
@@ -146,6 +153,7 @@ function createButtonRemove(){
     buttonCount.style.color = 'white';
     buttonCount.style.padding = '10px';
     buttonCount.style.margin = '10px';
+   
     buttonCount.onclick=function() { removeDouble(); };
     return buttonCount;
 };
@@ -159,6 +167,7 @@ function createClear(){
     buttonLower.style.color = 'white';
     buttonLower.style.padding = '10px';
     buttonLower.style.margin = '10px';
+
     buttonLower.onclick=function() { textDisplay(""); };
     buttonLower.innerHTML = 'Clear Text';
     return buttonLower;
