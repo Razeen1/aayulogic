@@ -174,7 +174,6 @@ function textDisplayLower(){
     var stt=document.querySelector('textarea').value;
     stt=stt.toLowerCase();
     textDisplay(stt);
-    
 }
 function countLength(){
     var stt=document.querySelector('textarea').value;
