@@ -34,7 +34,7 @@ h1.appendChild(textNode);
 containerResult.appendChild(h1);
 
 const p = document.createElement("h4");
-const textNodeP = document.createTextNode("");
+const textNodeP = document.createTextNode("0");
 p.style.padding = '20px';
 p.classList.add("p1");
 p.appendChild(textNodeP);
@@ -47,7 +47,7 @@ h4.appendChild(textNodeh);
 containerResult.appendChild(h4);
 
 const p2 = document.createElement("h4");
-const textNodeP2 = document.createTextNode("");
+const textNodeP2 = document.createTextNode("0");
 p2.style.padding = '20px';
 p2.classList.add("p2");
 p2.appendChild(textNodeP2);
@@ -77,7 +77,6 @@ function container3(){
     let container = document.createElement('div');
     container.classList.add('Result');
     container.style.display = 'flex';
-   
     container.style.alignItems='center';
     return container;
 }
