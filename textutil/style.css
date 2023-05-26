@@ -1,0 +1,17 @@
+button:hover{
+    background-color: rgb(255, 255, 255) !important;
+    color: black !important;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.5) !important;
+}
+textarea{
+    box-shadow: 0 4px 16px 0 rgba(54, 54, 54, 0.5) !important;
+}
+.Result:hover{
+    /* box-shadow: 0 4px 16px 0 rgba(54, 54, 54, 0.5) !important;
+    border-radius: 8px !important; */
+    color:grey!important;
+}
+
+h1:hover{
+    color:grey!important;
+}

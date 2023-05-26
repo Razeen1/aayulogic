@@ -1,7 +1,14 @@
 
 
 var container1=container();
+
+
 document.body.appendChild(container1);
+const title = document.createElement("h1");
+const textN = document.createTextNode("Text Util");
+title.appendChild(textN);
+container1.appendChild(title);
+
 var containerButton=container2();
 var containerResult=container3();
 container1.appendChild(createTextArea());
@@ -17,7 +24,7 @@ containerButton.appendChild(createButtonRemove());
 container1.appendChild(containerResult);
 
 const h1 = document.createElement("h4");
-const textNode = document.createTextNode("Length");
+const textNode = document.createTextNode("Length:");
 h1.style.padding = '20px';
 h1.appendChild(textNode);
 containerResult.appendChild(h1);
@@ -30,7 +37,7 @@ p.appendChild(textNodeP);
 containerResult.appendChild(p);
 
 const h4 = document.createElement("h4");
-const textNodeh = document.createTextNode("Word");
+const textNodeh = document.createTextNode("Word:");
 h4.style.padding = '20px';
 h4.appendChild(textNodeh);
 containerResult.appendChild(h4);
@@ -63,7 +70,6 @@ function container3(){
     container.classList.add('Result');
     container.style.display = 'flex';
     container.style.alignItems='center';
-    container.style.padding = '20px';
     return container;
 }
 function createTextArea(){
@@ -80,11 +86,15 @@ function createTextArea(){
     return txtarea;
 };
 
-
 function createButtonUpper(){
     let buttonUpper = document.createElement('button');
     buttonUpper.classList.add("upperB");
-    buttonUpper.style.backgroundColor = 'white';
+    buttonUpper.style.border = 'none';
+    buttonUpper.style.borderRadius= '5px';
+    buttonUpper.style.background = 'black';
+    buttonUpper.style.color = 'white';
+    buttonUpper.style.padding = '10px';
+    buttonUpper.style.margin = '10px';
     buttonUpper.innerHTML = 'Covert To Uppercase';
     buttonUpper.onclick=function() { textDisplayUpper(); };
 
@@ -93,7 +103,12 @@ function createButtonUpper(){
 function createButtonLower(){
     let buttonLower = document.createElement('button');
     buttonLower.classList.add("lowerB");
-    buttonLower.style.backgroundColor = 'white';
+    buttonLower.style.border = 'none';
+    buttonLower.style.borderRadius= '5px';
+    buttonLower.style.background = 'black';
+    buttonLower.style.color = 'white';
+    buttonLower.style.padding = '10px';
+    buttonLower.style.margin = '10px';
     buttonLower.onclick=function() { textDisplayLower(); };
     buttonLower.innerHTML = 'Covert To Lowercase';
     return buttonLower;
@@ -119,9 +134,14 @@ function createButtonLower(){
 
 function createButtonRemove(){
     let buttonCount = document.createElement('button');
-    buttonCount.classList.add("removeSpace");
-    buttonCount.style.backgroundColor = 'white';
-    buttonCount.innerHTML = 'Remove Double Space';
+    buttonCount.classList.add("removeB");
+    buttonCount.innerHTML = 'Remove spaces';
+    buttonCount.style.border = 'none';
+    buttonCount.style.borderRadius= '5px';
+    buttonCount.style.background = 'black';
+    buttonCount.style.color = 'white';
+    buttonCount.style.padding = '10px';
+    buttonCount.style.margin = '10px';
     buttonCount.onclick=function() { removeDouble(); };
     return buttonCount;
 };
