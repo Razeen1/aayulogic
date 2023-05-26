@@ -2,8 +2,8 @@
 
 var container1=container();
 
-
 document.body.appendChild(container1);
+
 const title = document.createElement("h1");
 const textN = document.createTextNode("Text Util");
 title.appendChild(textN);
@@ -11,16 +11,20 @@ container1.appendChild(title);
 
 var containerButton=container2();
 var containerResult=container3();
+
 container1.appendChild(createTextArea());
 container1.appendChild(containerButton);
+
 containerButton.appendChild(createButtonUpper());
 containerButton.appendChild(createButtonLower());
+containerButton.appendChild(createButtonRemove());
+containerButton.appendChild(createClear());
 
 //Add button to count
 // containerButton.appendChild(createButtonCount());
 // containerButton.appendChild(createButtonWords());
 
-containerButton.appendChild(createButtonRemove());
+
 container1.appendChild(containerResult);
 
 const h1 = document.createElement("h4");
@@ -146,6 +150,20 @@ function createButtonRemove(){
     return buttonCount;
 };
 
+function createClear(){
+    let buttonLower = document.createElement('button');
+    buttonLower.classList.add("clearB");
+    buttonLower.style.border = 'none';
+    buttonLower.style.borderRadius= '5px';
+    buttonLower.style.background = 'black';
+    buttonLower.style.color = 'white';
+    buttonLower.style.padding = '10px';
+    buttonLower.style.margin = '10px';
+    buttonLower.onclick=function() { textDisplay(""); };
+    buttonLower.innerHTML = 'Clear Text';
+    return buttonLower;
+};
+
 
 function textDisplayUpper(){
     var stt=document.querySelector('textarea').value;
@@ -177,7 +195,6 @@ function removeDouble (){
 }
 function textDisplay(sttt){
     document.querySelector('textarea').value= sttt;
-
 }
 function appendText(count){
     document.querySelector('.p1').innerHTML= count;
