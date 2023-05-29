@@ -103,10 +103,8 @@ function createButtonUpper(){
     buttonUpper.style.color = 'white';
     buttonUpper.style.padding = '10px';
     buttonUpper.style.margin = '10px';
-   
     buttonUpper.innerHTML = 'Covert To Uppercase';
     buttonUpper.onclick=function() { textDisplayUpper(); };
-
     return buttonUpper;
 };
 function createButtonLower(){

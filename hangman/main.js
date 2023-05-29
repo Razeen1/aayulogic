@@ -1,7 +1,7 @@
 // const arr = ["abcd", "xyz","qweui","rtyope","iopzuwz"];
-const arr = ["abc", "abc","abc","abc","abc"];
+const arr = ["Banana", "Apple","Halloween","Bottle","abc"];
 const selected=Math.floor(Math.random() * 4);
-
+var lives=9;
 
 let divMain = div();
 document.body.appendChild(divMain);
@@ -15,7 +15,7 @@ var txtC = txtShowLine();
 var txtR = txtShowRight();
 
 divMain.appendChild(buttonC);
-
+// hangMan();
 
 function startGame(){
     document.querySelector('.start').style.display="none";
@@ -28,10 +28,12 @@ function startGame(){
         keyCheck(name, selected);
     }
     }, false);
+
     divMain.appendChild(txtR);
     divMain.appendChild(txtP);
     divMain.appendChild(txtC);
     displayLine();
+    canvas();
 }
 
 function createButton(){
@@ -47,6 +49,11 @@ function createButton(){
     buttonC.onclick=function() { startGame(); };
     
     return buttonC;
+}
+var animate = function () {
+    var drawMe = lives ;
+    drawArray[drawMe]();
+    
 }
 
 function div() {
@@ -96,6 +103,11 @@ function keyCheck(x, y) {
     if (a !== 1) {
         alert("Not present");
         displayWrong(x);
+        if(lives!=-1){
+        animate();
+        lives-=1;}else {
+            endGame();
+        }
     } else {
         displayR(x);
         displayWrong(x);
@@ -131,8 +143,9 @@ function displayLine(l){
     }
 }
 function displayRight(as){
-     var corr=correctArr.toString()
+    var corr=correctArr.toString()
     document.querySelector(".textR").innerHTML=corr;
+    console.log(correctArr);
     // txtR.appendChild(textNodeh);
     // divMain.appendChild(txtR);
 }
@@ -148,7 +161,6 @@ function displayR(lq){
     if (ad != 1) {
         correctArr[selectedWord.indexOf(lq)]=lq;
         displayRight(lq);
-        console.log(correctArr);
     }
     finishGameWin();
         
@@ -159,9 +171,7 @@ function finishGameWin(){
         
         setTimeout(function() {
             alert("You win");
-          }, 1000);
-          setTimeout(function() {
-        endGame();
+            endGame();
           }, 1000);
           
         
@@ -179,8 +189,76 @@ function endGame(){
     txtP.parentNode.removeChild(txtP);
     txtC.parentNode.removeChild(txtC);
     txtR.parentNode.removeChild(txtR);
-   
+    context.clearRect(0, 0, 400, 400);
+    lives=9;
     // document.body.appendChild(divMain);
     document.querySelector('.start').style.display="block";
     
 }
+
+// function hangMan(){
+//    let draw= document.createElement("context");
+//    draw.setAttribute('id',"stickman");
+//    divMain.appendChild(draw);
+// }
+ function canvas(){
+
+    myStickman = document.getElementById("stickman");
+    context = myStickman.getContext('2d');
+    context.beginPath();
+    context.strokeStyle = "#000";
+    context.lineWidth = 2;
+  };
+ function head(){
+    myStickman = document.getElementById("stickman");
+    context = myStickman.getContext('2d');
+    context.beginPath();
+    context.arc(60, 25, 10, 0, Math.PI*2, true);
+    context.stroke();
+  }
+  
+ function draw($pathFromx, $pathFromy, $pathTox, $pathToy) {
+  
+  context.moveTo($pathFromx, $pathFromy);
+  context.lineTo($pathTox, $pathToy);
+  context.stroke(); 
+}
+
+ function frame1() {
+   draw (0, 150, 150, 150);
+ };
+ 
+  function frame2 () {
+   draw (10, 0, 10, 600);
+ };
+
+  function frame3() {
+   draw (0, 5, 70, 5);
+ };
+
+ function frame4 () {
+   draw (60, 5, 60, 15);
+ };
+
+ function torso () {
+   draw (60, 36, 60, 70);
+ };
+
+  function rightArm() {
+   draw (60, 46, 100, 50);
+ };
+
+ function leftArm () {
+   draw (60, 46, 20, 50);
+ };
+
+ function rightLeg () {
+   draw (60, 70, 100, 100);
+ };
+
+  function leftLeg() {
+   draw (60, 70, 20, 100);
+ };
+
+ const drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1]; 
+
