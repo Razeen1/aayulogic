@@ -25,6 +25,7 @@ let buttonR = createButton3();
 var txtP = txtShow();
 var txtC = txtShowLine();
 var txtR = txtShowRight();
+var txtPS = txtShowPS();
 
 divMain.appendChild(buttonC);
 
@@ -40,6 +41,7 @@ function startGame(){
     divMain.appendChild(txtP);
     divMain.appendChild(txtR);
     divMain.appendChild(txtC);
+    document.body.appendChild(txtPS);
 
     displayLine();
     canvas();
@@ -143,6 +145,15 @@ function txtShowLine() {
     pText.classList.add("textC");
     pText.style.display = 'flex';
     pText.style.alignItems = 'center';
+    return pText;
+}
+function txtShowPS() {
+    const pText = document.createElement('p');
+    pText.classList.add("textPS");
+    const textNode = document.createTextNode("Press any key to guess the word");
+    
+    pText.style.textAlign = 'center';
+    pText.appendChild(textNode);
     return pText;
 }
 
@@ -274,10 +285,12 @@ function endGame(){
     document.querySelector(".textP").innerHTML="";
     document.querySelector(".textR").innerHTML="";
     document.querySelector(".textC").innerHTML="";
+   
 
     txtP.parentNode.removeChild(txtP);
     txtR.parentNode.removeChild(txtR);
     txtC.parentNode.removeChild(txtC);
+    txtPS.parentNode.removeChild(txtPS);
     correct.parentNode.removeChild(correct);
     buttonH.parentNode.removeChild(buttonH);
     buttonR.parentNode.removeChild(buttonR);
