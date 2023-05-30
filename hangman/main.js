@@ -4,14 +4,12 @@ var lives=9;
 
 let divMain = div();
 
-
 var topdiv=document.getElementById("topDiv");
 var main=document.getElementById("main");
 const h1 = document.createElement("h1");
 const textNode = document.createTextNode("Hang Man");
 h1.style.textAlign="center";
 h1.appendChild(textNode);
-// main.appendChild(h1);
 topdiv.parentNode.insertBefore(h1, topdiv);
 topdiv.appendChild(divMain);
 
@@ -112,6 +110,7 @@ function div() {
     mainDiv.style.fontFamily = 'Courier New';
     return mainDiv;
 };
+
 function div2() {
     const mainDiv = document.createElement('div');
     mainDiv.classList.add("buttonGrid");
@@ -120,6 +119,7 @@ function div2() {
     mainDiv.style.alignItems = 'center';
     return mainDiv;
 };
+
 function txtShow() {
     const pText = document.createElement('p');
     pText.classList.add("textP");
@@ -161,6 +161,10 @@ function keyCheck(x, y) {
     };
     if (a !== 1) {
         document.querySelector(".textC").innerHTML="Not Present";
+        setTimeout(function() {
+            document.querySelector(".textC").innerHTML="";
+        
+          }, 700);
         displayWrong(x,1);
         
     } else {
@@ -188,7 +192,6 @@ function displayWrong(wrong,qw) {
             lives-=1;
         }
             else {
-                document.querySelector(".textC").innerHTML="";
                 document.querySelector(".textR").innerHTML="You lose! The word was: "+arr[selected].toUpperCase();
                 setTimeout(function() {
                     endGame();
@@ -250,7 +253,7 @@ function finishGameWin(){
         const controller = new AbortController();
         setTimeout(function() {
             // document.querySelector(".textC").innerHTML="";
-            document.querySelector(".textR").innerHTML="Game Finish! You Win!";
+            document.querySelector(".textR").innerHTML="Correct! You Win!";
             setTimeout(function() {
                 endGame();
             
@@ -309,8 +312,6 @@ function randomNoRepeats() {
       return item;
     };
   }
-
-
 
  function canvas(){
 
