@@ -1,25 +1,35 @@
-// const arr = ["abcd", "xyz","qweui","rtyope","iopzuwz"];
-const arr = ["Banana", "Apple","Halloween","Bottle","abc"];
+const arr = ["banana", "apple","halloween","bottle","abc"];
 const selected=Math.floor(Math.random() * 4);
 var lives=9;
 
 let divMain = div();
-document.body.appendChild(divMain);
+
+
+
+var topdiv=document.getElementById("topDiv");
+var main=document.getElementById("main");
+const h1 = document.createElement("h1");
+const textNode = document.createTextNode("Hang Man");
+h1.style.textAlign="center";
+h1.appendChild(textNode);
+// main.appendChild(h1);
+topdiv.parentNode.insertBefore(h1, topdiv);
+topdiv.appendChild(divMain);
+
 var pressedArr = [];
 var correctArr = [];
 
-
 let buttonC = createButton();
+let buttonH = createButton2();
+
 var txtP = txtShow();
 var txtC = txtShowLine();
 var txtR = txtShowRight();
 
 divMain.appendChild(buttonC);
-// hangMan();
 
 function startGame(){
     document.querySelector('.start').style.display="none";
-    // divMain.appendChild(buttonC);
     
     document.addEventListener('keydown', (event) => {
     var name = event.key;
@@ -28,12 +38,11 @@ function startGame(){
         keyCheck(name, selected);
     }
     }, false);
-
-    divMain.appendChild(txtR);
+    divMain.appendChild(buttonH);
     divMain.appendChild(txtP);
-    divMain.appendChild(txtC);
     displayLine();
     canvas();
+   
 }
 
 function createButton(){
@@ -47,6 +56,20 @@ function createButton(){
     buttonC.style.margin = '10px';
     buttonC.innerHTML = 'Start Game';
     buttonC.onclick=function() { startGame(); };
+    
+    return buttonC;
+}
+function createButton2(){
+    let buttonC = document.createElement('button');
+    buttonC.classList.add("hint");
+    buttonC.style.border = 'none';
+    buttonC.style.borderRadius= '5px';
+    buttonC.style.background = 'black';
+    buttonC.style.color = 'white';
+    buttonC.style.padding = '10px';
+    buttonC.style.margin = '10px';
+    buttonC.innerHTML = 'Hint';
+    buttonC.onclick=function() { hint(); };
     
     return buttonC;
 }
@@ -94,73 +117,87 @@ function inputAnswer() {
 }
 function keyCheck(x, y) {
     const myArray = arr[y].split('');
+    a=0;
     for (i = 0; i < myArray.length; i++) {
         if (myArray[i].toLowerCase() === x.toLowerCase()) {
             var a = 1;
             break;
+            
         };
     };
     if (a !== 1) {
         alert("Not present");
-        displayWrong(x);
-        if(lives!=-1){
-        animate();
-        lives-=1;}else {
-            endGame();
-        }
+        displayWrong(x,1);
+        
     } else {
         displayR(x);
-        displayWrong(x);
+        displayWrong(x,2);
         
     }
 }
-function displayWrong(wrong) {
+function displayWrong(wrong,qw) {
     for (i = 0; i < pressedArr.length; i++) {
         if (pressedArr[i] == wrong) {
             var a = 1;
             break;
         }
-
     }
     if (a != 1) {
-        let textNodeh = document.createTextNode(wrong);
+        let textNodeh = document.createTextNode(wrong+" ");
         txtP.appendChild(textNodeh);
         divMain.appendChild(txtP);
         pressedArr.push(wrong);
+        if(qw!==2){
+        if(lives!=-1){
+            animate();
+            lives-=1;}
+            else {
+                endGame(0);
+            }
+        }
     }
 }
 function displayLines(){
-    let displayLines= document.createElement('p');
-    let textNodeh = document.createTextNode("_ ");
-    txtC.appendChild(textNodeh);
-    divMain.appendChild(txtC);
-}
-function displayLine(l){
     let selectedNum=arr[selected];
- 
-    for (let i = 0; i < selectedNum.length; i++) {
-        displayLines();
+    correct = document.createElement('ul');
+    correct.style.display="flex";
+
+    for (var i = 0; i < selectedNum.length; i++) {
+        correct.setAttribute('id', 'myword');
+        guess = document.createElement('li');
+        
+        // guess.setAttribute('class', 'guess');
+        guess.innerHTML = "_";
+        divMain.appendChild(correct);
+      correct.appendChild(guess);
     }
 }
-function displayRight(as){
-    var corr=correctArr.toString()
-    document.querySelector(".textR").innerHTML=corr;
-    console.log(correctArr);
-    // txtR.appendChild(textNodeh);
-    // divMain.appendChild(txtR);
+function displayLine(l){
+        displayLines();
 }
 function displayR(lq){
     let selectedWord=arr[selected].split('');
-    for (i = 0; i < pressedArr.length; i++) {
+    for (i = 0; i < correctArr.length; i++) {
         if (pressedArr[i] === lq) {
             var ad = 1;
             break;
         }
-
     }
     if (ad != 1) {
-        correctArr[selectedWord.indexOf(lq)]=lq;
-        displayRight(lq);
+        var indices = [];
+        var li = document.querySelectorAll("ul > li");;
+
+        for(var i=0; i<selectedWord.length;i++) {
+        if (selectedWord[i] == lq){
+            indices.push(i);
+        } 
+        }
+        for(var i=0; i<indices.length;i++) {
+            correctArr[indices[i]]=lq;
+            li[indices[i]].innerHTML=lq;
+            
+            }
+        // displayRight(lq);
     }
     finishGameWin();
         
@@ -170,37 +207,57 @@ function finishGameWin(){
     if(correctArr.toString()==selectedNum.toString()){
         
         setTimeout(function() {
-            alert("You win");
-            endGame();
-          }, 1000);
-          
-        
-        
+            endGame(1);
+          }, 500);
     }
 }
-function endGame(){
-    alert("Game Finish");
+function endGame(win){
+    if(win==1){
+        alert("Game Finish! You Win! ");
+    }else{
+        alert("You lose! The word was: "+arr[selected]);
+    }
+    
     pressedArr = [];
     correctArr = [];
-    // document.body.removeChild(divMain);
-    document.querySelector(".textP").innerHTML="";
-    document.querySelector(".textC").innerHTML="";
-    document.querySelector(".textR").innerHTML="";
+    // document.querySelector(".textP").innerHTML="";
     txtP.parentNode.removeChild(txtP);
-    txtC.parentNode.removeChild(txtC);
-    txtR.parentNode.removeChild(txtR);
+    correct.parentNode.removeChild(correct);
+    buttonH.parentNode.removeChild(buttonH);
     context.clearRect(0, 0, 400, 400);
     lives=9;
-    // document.body.appendChild(divMain);
     document.querySelector('.start').style.display="block";
-    
+
 }
 
-// function hangMan(){
-//    let draw= document.createElement("context");
-//    draw.setAttribute('id',"stickman");
-//    divMain.appendChild(draw);
-// }
+function hint(){
+    randomElement=randomNoRepeats();
+    var randomElement = randomNoRepeats();
+    var hintC=randomElement();
+    
+    for (i = 0; i < correctArr.length; i++) {
+        if (correctArr[i] === hintC) {
+            var ad = 1;
+            break;
+        }
+    }if(ad!=1){
+        displayR(hintC);
+    }
+    
+}
+function randomNoRepeats() {
+    let selectedNum=arr[selected].split('');
+    var copy = selectedNum.slice(0);
+  
+    return function(){
+      if (copy.length < 1) { copy = selectedNum.slice(0); }
+      var index = Math.floor(Math.random() * copy.length);
+      var item = copy[index];
+      copy.splice(index, 1);
+      return item;
+    };
+  }
+
  function canvas(){
 
     myStickman = document.getElementById("stickman");
