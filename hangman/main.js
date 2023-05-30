@@ -1,10 +1,8 @@
-const arr = ["banana", "apple","halloween","bottle","abc"];
-const selected=Math.floor(Math.random() * 4);
+const arr = ["banana", "apple","halloween","bottle","laptop"];
+const selected=Math.floor(Math.random() * arr.length);
 var lives=9;
 
 let divMain = div();
-
-
 
 var topdiv=document.getElementById("topDiv");
 var main=document.getElementById("main");
@@ -40,6 +38,9 @@ function startGame(){
     }, false);
     divMain.appendChild(buttonH);
     divMain.appendChild(txtP);
+    divMain.appendChild(txtR);
+    divMain.appendChild(txtC);
+
     displayLine();
     canvas();
    
@@ -56,9 +57,9 @@ function createButton(){
     buttonC.style.margin = '10px';
     buttonC.innerHTML = 'Start Game';
     buttonC.onclick=function() { startGame(); };
-    
     return buttonC;
 }
+
 function createButton2(){
     let buttonC = document.createElement('button');
     buttonC.classList.add("hint");
@@ -70,9 +71,9 @@ function createButton2(){
     buttonC.style.margin = '10px';
     buttonC.innerHTML = 'Hint';
     buttonC.onclick=function() { hint(); };
-    
     return buttonC;
 }
+
 var animate = function () {
     var drawMe = lives ;
     drawArray[drawMe]();
@@ -89,6 +90,7 @@ function div() {
     mainDiv.style.fontFamily = 'Courier New';
     return mainDiv;
 };
+
 function txtShow() {
     const pText = document.createElement('p');
     pText.classList.add("textP");
@@ -96,6 +98,7 @@ function txtShow() {
     pText.style.alignItems = 'center';
     return pText;
 }
+
 function txtShowRight() {
     const pText = document.createElement('p');
     pText.classList.add("textR");
@@ -103,6 +106,7 @@ function txtShowRight() {
     pText.style.alignItems = 'center';
     return pText;
 }
+
 function txtShowLine() {
     const pText = document.createElement('p');
     pText.classList.add("textC");
@@ -110,6 +114,7 @@ function txtShowLine() {
     pText.style.alignItems = 'center';
     return pText;
 }
+
 function inputAnswer() {
     const ansInput = document.createElement('input');
     ansInput.style.display = 'hidden';
@@ -126,10 +131,11 @@ function keyCheck(x, y) {
         };
     };
     if (a !== 1) {
-        alert("Not present");
+        document.querySelector(".textC").innerHTML="Not Present";
         displayWrong(x,1);
         
     } else {
+        document.querySelector(".textC").innerHTML="";
         displayR(x);
         displayWrong(x,2);
         
@@ -143,16 +149,17 @@ function displayWrong(wrong,qw) {
         }
     }
     if (a != 1) {
-        let textNodeh = document.createTextNode(wrong+" ");
+        let textNodeh = document.createTextNode(wrong.toUpperCase()+" ");
         txtP.appendChild(textNodeh);
         divMain.appendChild(txtP);
         pressedArr.push(wrong);
         if(qw!==2){
         if(lives!=-1){
             animate();
-            lives-=1;}
+            lives-=1;
+        }
             else {
-                endGame(0);
+                document.querySelector(".textR").innerHTML="You lose! The word was: "+arr[selected].toUpperCase();
             }
         }
     }
@@ -186,7 +193,7 @@ function displayR(lq){
     if (ad != 1) {
         var indices = [];
         var li = document.querySelectorAll("ul > li");;
-
+        
         for(var i=0; i<selectedWord.length;i++) {
         if (selectedWord[i] == lq){
             indices.push(i);
@@ -194,10 +201,9 @@ function displayR(lq){
         }
         for(var i=0; i<indices.length;i++) {
             correctArr[indices[i]]=lq;
-            li[indices[i]].innerHTML=lq;
+            li[indices[i]].innerHTML=lq.toUpperCase();
             
             }
-        // displayRight(lq);
     }
     finishGameWin();
         
@@ -207,7 +213,7 @@ function finishGameWin(){
     if(correctArr.toString()==selectedNum.toString()){
         
         setTimeout(function() {
-            endGame(1);
+            document.querySelector(".textR").innerHTML="Game Finish! You Win!";
           }, 500);
     }
 }
