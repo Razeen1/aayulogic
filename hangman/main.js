@@ -1,8 +1,9 @@
 const arr = ["banana", "apple","halloween","bottle","laptop"];
-const selected=Math.floor(Math.random() * arr.length);
+
 var lives=9;
 
 let divMain = div();
+
 
 var topdiv=document.getElementById("topDiv");
 var main=document.getElementById("main");
@@ -17,8 +18,11 @@ topdiv.appendChild(divMain);
 var pressedArr = [];
 var correctArr = [];
 
+let buttonDiv = div2();
+divMain.appendChild(buttonDiv);
 let buttonC = createButton();
 let buttonH = createButton2();
+let buttonR = createButton3();
 
 var txtP = txtShow();
 var txtC = txtShowLine();
@@ -28,15 +32,13 @@ divMain.appendChild(buttonC);
 
 function startGame(){
     document.querySelector('.start').style.display="none";
-    
+    selected=Math.floor(Math.random() * arr.length);
     document.addEventListener('keydown', (event) => {
-    var name = event.key;
-    var charCode = event.which;
-    if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) {
-        keyCheck(name, selected);
+        start(event);
     }
-    }, false);
-    divMain.appendChild(buttonH);
+    , false);
+    buttonDiv.appendChild(buttonH);
+    buttonDiv.appendChild(buttonR);
     divMain.appendChild(txtP);
     divMain.appendChild(txtR);
     divMain.appendChild(txtC);
@@ -44,6 +46,12 @@ function startGame(){
     displayLine();
     canvas();
    
+}
+function start(event){
+    var name = event.key;
+    var charCode = event.which;
+    if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) {
+        keyCheck(name, selected);}
 }
 
 function createButton(){
@@ -74,6 +82,20 @@ function createButton2(){
     return buttonC;
 }
 
+function createButton3(){
+    let buttonC = document.createElement('button');
+    buttonC.classList.add("reset");
+    buttonC.style.border = 'none';
+    buttonC.style.borderRadius= '5px';
+    buttonC.style.background = 'black';
+    buttonC.style.color = 'white';
+    buttonC.style.padding = '10px';
+    buttonC.style.margin = '10px';
+    buttonC.innerHTML = 'Play Again';
+    buttonC.onclick=function() { endGame(); };
+    return buttonC;
+}
+
 var animate = function () {
     var drawMe = lives ;
     drawArray[drawMe]();
@@ -90,7 +112,14 @@ function div() {
     mainDiv.style.fontFamily = 'Courier New';
     return mainDiv;
 };
-
+function div2() {
+    const mainDiv = document.createElement('div');
+    mainDiv.classList.add("buttonGrid");
+    mainDiv.style.margin = '10px';
+    mainDiv.style.display = 'flex';
+    mainDiv.style.alignItems = 'center';
+    return mainDiv;
+};
 function txtShow() {
     const pText = document.createElement('p');
     pText.classList.add("textP");
@@ -159,7 +188,14 @@ function displayWrong(wrong,qw) {
             lives-=1;
         }
             else {
+                document.querySelector(".textC").innerHTML="";
                 document.querySelector(".textR").innerHTML="You lose! The word was: "+arr[selected].toUpperCase();
+                setTimeout(function() {
+                    endGame();
+                
+                  }, 2000);
+                   
+                 
             }
         }
     }
@@ -211,25 +247,35 @@ function displayR(lq){
 function finishGameWin(){
     let selectedNum=arr[selected].split('');
     if(correctArr.toString()==selectedNum.toString()){
-        
+        const controller = new AbortController();
         setTimeout(function() {
+            // document.querySelector(".textC").innerHTML="";
             document.querySelector(".textR").innerHTML="Game Finish! You Win!";
+            setTimeout(function() {
+                endGame();
+            
+              }, 2000);
           }, 500);
     }
 }
-function endGame(win){
-    if(win==1){
-        alert("Game Finish! You Win! ");
-    }else{
-        alert("You lose! The word was: "+arr[selected]);
+function endGame(){
+   
+    document.removeEventListener('keydown', (event) => {
+        start(event);
     }
-    
+    , false);
     pressedArr = [];
     correctArr = [];
-    // document.querySelector(".textP").innerHTML="";
+    document.querySelector(".textP").innerHTML="";
+    document.querySelector(".textR").innerHTML="";
+    document.querySelector(".textC").innerHTML="";
+
     txtP.parentNode.removeChild(txtP);
+    txtR.parentNode.removeChild(txtR);
+    txtC.parentNode.removeChild(txtC);
     correct.parentNode.removeChild(correct);
     buttonH.parentNode.removeChild(buttonH);
+    buttonR.parentNode.removeChild(buttonR);
     context.clearRect(0, 0, 400, 400);
     lives=9;
     document.querySelector('.start').style.display="block";
@@ -263,6 +309,8 @@ function randomNoRepeats() {
       return item;
     };
   }
+
+
 
  function canvas(){
 
