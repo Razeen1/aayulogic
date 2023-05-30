@@ -1,6 +1,6 @@
 const arr = ["banana", "apple","halloween","bottle","laptop"];
 
-var lives=9;
+var lives=6;
 
 let divMain = div();
 
@@ -43,7 +43,9 @@ function startGame(){
 
     displayLine();
     canvas();
-   
+    drawArray[9]();
+    drawArray[8]();
+    drawArray[7]();
 }
 function start(event){
     var name = event.key;
