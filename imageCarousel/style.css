@@ -1,0 +1,22 @@
+.buttonL, .buttonR{
+    position:absolute;
+    top: 50%;
+    
+}
+.dots{
+    display: inline-block !important;
+    background-color: rgb(148, 148, 148);
+    border-radius: 50%;
+}
+.active, .dots:hover {
+    background-color: #000000;
+  }
+#imgs{
+    max-width: 2000px !important;
+    height: 400px;
+    object-fit: none;
+    display: block !important;
+}
+.imgCar{
+    display:none;
+}
