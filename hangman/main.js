@@ -200,6 +200,7 @@ function displayWrong(wrong,qw) {
         divMain.appendChild(txtP);
         pressedArr.push(wrong);
         if(qw!==2){
+            console.log(lives);
         if(lives!=-1){
             animate();
             lives-=1;
@@ -295,7 +296,7 @@ function endGame(){
     buttonH.parentNode.removeChild(buttonH);
     buttonR.parentNode.removeChild(buttonR);
     context.clearRect(0, 0, 400, 400);
-    lives=9;
+    lives=6;
     document.querySelector('.start').style.display="block";
 
 }
