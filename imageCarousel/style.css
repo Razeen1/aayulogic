@@ -14,7 +14,7 @@
 #imgs{
     max-width: 2000px !important;
     height: 400px;
-    object-fit: none;
+    object-fit: fill;
     display: block !important;
 }
 .imgCar{

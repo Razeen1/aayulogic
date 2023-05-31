@@ -47,7 +47,7 @@ function apiCall() {
 
       for (let i = 0; i < num; i++) {
         let imageElement = document.querySelectorAll("#imgs");
-        imageElement[i].src = data[i].urls.regular;
+        imageElement[i].src = data[i].urls.full;
       }
     });
 }
