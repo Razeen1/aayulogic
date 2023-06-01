@@ -36,4 +36,16 @@ button:hover{
     
 }
 
+@media screen and (max-width: 768px) {
+    h1{
+        font-size: 20px;
+        margin:0 !important;
+    }
+    .likeDiv{
+        width:95% !important;
+    }
+    .txtDiv{
+        font-size: 10px;
+    }
+}
  
