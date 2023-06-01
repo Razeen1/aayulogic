@@ -2,11 +2,11 @@ body{
    font-family: 'Roboto'; 
    margin:0;
    background-color: black;
+   overflow: hidden;
 }
 .buttonL, .buttonR{
     position:absolute;
     top: 45%;
-    
 }
 
 .dots{

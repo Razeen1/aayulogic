@@ -1,5 +1,5 @@
 const client_ID = "Xy5FVewzbaH374GWrbZQnsBRLFEyU2l7q9iBt6981g8";
-let num = 5;
+let num = 7;
 let mainDiv = maindiv();
 
 let slideIndex = 1;
@@ -24,6 +24,7 @@ h1.style.backgroundImage =
   "linear-gradient(to left, rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.200),rgba(8, 8, 8, 0))";
 h1.style.padding = "10px";
 h1.style.width = "100%";
+h1.style.maxWidth = "95%";
 h1.style.borderRadius = "10px";
 h1.style.textAlign = "center";
 h1.style.margin = "0px 20px";
@@ -75,9 +76,13 @@ function apiCall() {
         let imageElement = document.querySelectorAll("#imgs");
         imageElement[i].src = data[i].urls.regular;
         let imageTxt = document.querySelectorAll(".txtDiv");
-        imageTxt[i].textContent = data[i].alt_description.toUpperCase();
-        let likeTxt = document.querySelectorAll(".likeDiv");
-        likeTxt[i].textContent = "Likes: " + data[i].likes;
+        let desc = data[i].alt_description.toUpperCase();
+        if (desc == null) {
+          desc = "Description";
+        }
+        imageTxt[i].textContent = desc;
+        // let likeTxt = document.querySelectorAll(".likeDiv");
+        // likeTxt[i].textContent = "Likes: " + data[i].likes;
       }
     });
 }
@@ -103,6 +108,8 @@ function txtDiv() {
   container.style.position = "absolute";
   container.style.bottom = "8px";
   container.style.width = "100%";
+  container.style.backgroundImage =
+    "linear-gradient(to left, rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.200),rgba(8, 8, 8, 0))";
   container.style.textAlign = "center";
   return container;
 }
@@ -139,8 +146,8 @@ function imgDisplay() {
 function spanDots() {
   let spanD = document.createElement("span");
   spanD.classList.add("dots");
-  spanD.style.height = "15px";
-  spanD.style.width = "15px";
+  spanD.style.height = "10px";
+  spanD.style.width = "10px";
   spanD.style.marginLeft = "2px";
   spanD.style.marginRight = "2px";
   return spanD;
