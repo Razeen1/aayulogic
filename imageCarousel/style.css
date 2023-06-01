@@ -1,3 +1,6 @@
+body{
+   font-family: 'Roboto'; 
+}
 .buttonL, .buttonR{
     position:absolute;
     top: 50%;
@@ -7,16 +10,23 @@
     display: inline-block !important;
     background-color: rgb(148, 148, 148);
     border-radius: 50%;
+    margin: 10px;
 }
 .active, .dots:hover {
-    background-color: #000000;
+    background-color: #0a0a0a;
+  }
+button:hover{
+    background-color: #0a0a0a94!important;
+    color: aliceblue !important;
   }
 #imgs{
-    max-width: 2000px !important;
+    width:100% !important;
     height: 400px;
-    object-fit: fill;
+    object-fit: cover;
     display: block !important;
 }
 .imgCar{
     display:none;
+    
 }
+ 

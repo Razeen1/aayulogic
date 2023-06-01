@@ -6,9 +6,17 @@ let slideIndex = 1;
 let images = [];
 let imageCarDivs = [];
 let dots = [];
+let idTexts = [];
 let buttonR = buttonChangeR();
 let buttonL = buttonChangeL();
 let dotDivs = dotDiv();
+let textDiv = txtDiv();
+
+const h1 = document.createElement("h1");
+const textNode = document.createTextNode("Unsplash Images");
+h1.style.textAlign = "center";
+h1.appendChild(textNode);
+document.body.appendChild(h1);
 
 document.body.appendChild(mainDiv);
 mainDiv.appendChild(buttonR);
@@ -17,9 +25,11 @@ document.body.appendChild(dotDivs);
 
 for (let i = 0; i < num; i++) {
   images[i] = imgDisplay();
+  idTexts[i] = txtDiv();
   imageCarDivs[i] = imageCarousel();
   mainDiv.appendChild(imageCarDivs[i]);
   imageCarDivs[i].appendChild(images[i]);
+  imageCarDivs[i].appendChild(idTexts[i]);
 }
 for (let i = 0; i < num; i++) {
   dots[i] = spanDots();
@@ -47,7 +57,9 @@ function apiCall() {
 
       for (let i = 0; i < num; i++) {
         let imageElement = document.querySelectorAll("#imgs");
-        imageElement[i].src = data[i].urls.full;
+        imageElement[i].src = data[i].urls.regular;
+        let imageTxt = document.querySelectorAll(".txtDiv");
+        imageTxt[i].textContent = data[i].alt_description.toUpperCase();
       }
     });
 }
@@ -56,8 +68,6 @@ function testt() {
   for (let i = 0; i < 5; i++) {
     let imageElement = document.querySelectorAll("#imgs");
     console.log(imageElement[i]);
-    // imageElement[i].src = data[i].urls.regular;
-    // imageCarDivs[i].appendChild(imageElement[i]);
   }
 }
 
@@ -71,13 +81,24 @@ function maindiv() {
   let container = document.createElement("div");
   container.classList.add("maindiv");
   container.style.position = "relative";
-  container.style.fontFamily = "Courier New";
   return container;
 }
 
 function imageCarousel() {
   let container = document.createElement("div");
   container.classList.add("imgCar");
+  return container;
+}
+function txtDiv() {
+  let container = document.createElement("div");
+  container.classList.add("txtDiv");
+  container.style.color = "white";
+  container.style.fontsize = "15px";
+  container.style.padding = " 8px 12px";
+  container.style.position = "absolute";
+  container.style.bottom = "8px";
+  container.style.width = "100%";
+  container.style.textAlign = "center";
   return container;
 }
 function dotDiv() {
@@ -110,9 +131,10 @@ function buttonChangeR() {
   button1.classList.add("buttonR");
   button1.style.border = "none";
   button1.style.borderRadius = "5px";
-  button1.style.background = "black";
-  button1.style.color = "white";
+  button1.style.background = "#88888891";
+  button1.style.color = "black";
   button1.style.padding = "10px";
+  button1.style.fontSize = "20px";
   button1.style.margin = "10px";
   button1.innerHTML = "<";
   button1.onclick = function () {
@@ -125,9 +147,10 @@ function buttonChangeL() {
   button1.classList.add("buttonL");
   button1.style.border = "none";
   button1.style.borderRadius = "5px";
-  button1.style.background = "black";
-  button1.style.color = "white";
+  button1.style.background = "#88888891";
+  button1.style.color = "black";
   button1.style.padding = "10px";
+  button1.style.fontSize = "20px";
   button1.style.margin = "10px";
   button1.style.right = "0";
   button1.innerHTML = ">";
