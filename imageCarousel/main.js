@@ -2,7 +2,7 @@ const client_ID = "Xy5FVewzbaH374GWrbZQnsBRLFEyU2l7q9iBt6981g8";
 let num = 7;
 let mainDiv = maindiv();
 
-let slideIndex = 1;
+let slideIndex = 4;
 let images = [];
 let imageCarDivs = [];
 let dots = [];
@@ -97,8 +97,10 @@ function maindiv() {
 function imageCarousel() {
   let container = document.createElement("div");
   container.classList.add("imgCar");
+  container.style.display = "none";
   return container;
 }
+
 function txtDiv() {
   let container = document.createElement("div");
   container.classList.add("txtDiv");
@@ -139,6 +141,11 @@ function imgDisplay() {
   let imageElement = document.createElement("img");
   imageElement.setAttribute("id", "imgs");
   // imageElement.style.opacity = "0.7";
+  imageElement.style.maxWidth = "100%";
+  imageElement.style.width = "100%";
+  imageElement.style.height = "500px";
+  imageElement.style.objectFit = "cover";
+  imageElement.style.display = "block";
   imageElement.src = "";
   return imageElement;
 }
@@ -148,8 +155,11 @@ function spanDots() {
   spanD.classList.add("dots");
   spanD.style.height = "10px";
   spanD.style.width = "10px";
-  spanD.style.marginLeft = "2px";
-  spanD.style.marginRight = "2px";
+  spanD.style.marginLeft = "3px";
+  spanD.style.marginRight = "3px";
+  spanD.style.display = "inline-block";
+  spanD.style.backgroundColor = "rgb(148, 148, 148)";
+  spanD.style.borderRadius = "50%";
   return spanD;
 }
 
@@ -163,6 +173,8 @@ function buttonChangeR() {
   button1.style.padding = "10px";
   button1.style.fontSize = "20px";
   button1.style.margin = "10px";
+  button1.style.position = "absolute";
+  button1.style.top = "45%";
   button1.innerHTML = "<";
   button1.onclick = function () {
     plusSlides(-1);
@@ -180,12 +192,18 @@ function buttonChangeL() {
   button1.style.fontSize = "20px";
   button1.style.margin = "10px";
   button1.style.right = "0";
+  button1.style.position = "absolute";
+  button1.style.top = "45%";
   button1.innerHTML = ">";
   button1.onclick = function () {
     plusSlides(1);
   };
   return button1;
 }
+
+setInterval(function () {
+  plusSlides(1);
+}, 4000);
 
 function plusSlides(n) {
   showSlides((slideIndex += n));
