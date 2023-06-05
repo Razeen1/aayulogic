@@ -1,28 +1,65 @@
-// Create a new worker, giving it the code in "generate.js"
-const worker = new Worker("./generate.js");
+// // To experiment with error handling, "threshold" values cause errors randomly
+// const THRESHOLD_A = 5; // can use zero 0 to guarantee error
 
-// When the user clicks "Generate primes", send a message to the worker.
-// The message command is "generate", and the message also contains "quota",
-// which is the number of primes to generate.
-document.querySelector("#generate").addEventListener("click", () => {
-  const quota = document.querySelector("#quota").value;
-  worker.postMessage({
-    command: "generate",
-    quota,
-  });
-});
+// function tetheredGetNumber(resolve, reject) {
+//   setTimeout(() => {
+//     const randomInt = Date.now();
+//     const value = randomInt % 10;
+//     if (value < THRESHOLD_A) {
+//       resolve(value);
+//     } else {
+//       reject(`Too large: ${value}`);
+//     }
+//   }, 500);
+// }
 
-// When the worker sends a message back to the main thread,
-// update the output box with a message for the user, including the number of
-// primes that were generated, taken from the message data.
-worker.addEventListener("message", (message) => {
-  document.querySelector(
-    "#output"
-  ).textContent = `Finished generating ${message.data} primes!`;
-});
+// function determineParity(value) {
+//   const isOdd = value % 2 === 1;
+//   return { value, isOdd };
+// }
 
-document.querySelector("#reload").addEventListener("click", () => {
-  document.querySelector("#user-input").value =
-    'Try typing in here immediately after pressing "Generate primes"';
-  document.location.reload();
-});
+// function troubleWithGetNumber(reason) {
+//   const err = new Error("Trouble getting number", { cause: reason });
+//   console.error(err);
+//   throw err;
+// }
+
+// function promiseGetWord(parityInfo) {
+//   return new Promise((resolve, reject) => {
+//     const { value, isOdd } = parityInfo;
+//     if (value >= THRESHOLD_A - 1) {
+//       reject(`Still too large: ${value}`);
+//     } else {
+//       parityInfo.wordEvenOdd = isOdd ? "odd" : "even";
+//       resolve(parityInfo);
+//     }
+//   });
+// }
+
+// new Promise(tetheredGetNumber)
+//   .then(determineParity, troubleWithGetNumber)
+//   .then(promiseGetWord)
+//   .then((info) => {
+//     console.log(`Got: ${info.value}, ${info.wordEvenOdd}`);
+//     return info;
+//   })
+//   .catch((reason) => {
+//     if (reason.cause) {
+//       console.error("Had previously handled error");
+//     } else {
+//       console.error(`Trouble with promiseGetWord(): ${reason}`);
+//     }
+//   })
+//   .finally((info) => console.log("All done"));
+function sumAll(arr) {
+  arr.sort((a, b) => a - b);
+  console.log(arr);
+  let b = 0;
+  for (let i = arr[0]; i <= arr[1]; i++) {
+    b = b + i;
+    console.log(b);
+  }
+  return b;
+}
+
+console.log(sumAll([5, 10]));
