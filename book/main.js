@@ -1,6 +1,3 @@
-// let countrySelect = "Nepal";
-// let langSelect = "French";
-
 fetch(
   "https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json"
 )
@@ -8,14 +5,12 @@ fetch(
     return response.json();
   })
   .then((data) => {
-    // searchByCountry(data, countrySelect);
-    // searchByLanguage(data, langSelect);
-    toArray(data);
+    mapByCountry(data);
   });
 
-function toArray(data) {
+function mapByCountry(data) {
   let countryObject = {};
-  let arr = [...new Set(data.map((x) => x.country))];
+  let arr = [...new Set(data.map((x) => x.country))].sort();
   arr.forEach((element) => {
     let d = data.filter((jData) => jData.country == element);
     countryObject[element] = [...d];
