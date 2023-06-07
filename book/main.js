@@ -10,10 +10,10 @@ fetch(
 
 function mapByCountry(data) {
   let countryObject = {};
-  let arr = [...new Set(data.map((x) => x.country))].sort();
-  arr.forEach((element) => {
-    let d = data.filter((jData) => jData.country == element);
-    countryObject[element] = [...d];
+  [...new Set(data.map((x) => x.country))].sort().forEach((element) => {
+    countryObject[element] = [
+      ...data.filter((jData) => jData.country == element),
+    ];
   });
   console.log(countryObject);
 }
