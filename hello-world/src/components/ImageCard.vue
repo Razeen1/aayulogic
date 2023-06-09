@@ -1,12 +1,13 @@
 <template> 
-   
-<div class="card" v-for="per in person" :key="per.name" :style="{color:per.color}">
-  <img src="../assets/logo.png" alt="Avatar" style="width:100%">
-  <div class="container">
-    <h4><b>{{per.name}}</b></h4> 
-    <p>{{ per.location }}</p> 
+  <div class="cards" >
+    <div class="card" v-for="per in person" :key="per.name" >
+    <img src="../assets/logo.png" alt="Avatar" style="width:100%">
+    <div class="container">
+    <h4><b>{{per.name}}</b> </h4> 
+    <p>{{ per.location }}   <span class="dot" :style="{backgroundColor:per.color}"></span></p> 
   </div>
 </div>
+</div> 
 </template>
 
 <script>
@@ -43,6 +44,7 @@
   width: 20%;
   margin:20px;
   
+  
 }
 
 .card:hover {
@@ -52,5 +54,15 @@
 .container {
   padding: 2px 16px;
 }
+.dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
 
+}
 </style>
