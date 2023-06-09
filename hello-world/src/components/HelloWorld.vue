@@ -1,33 +1,70 @@
 <template>
-  <input type="Text" v-model="newRow.name" placeholder="Enter Name"/>
-  <input type="Text" v-model="newRow.color" placeholder="Enter Color"/>
-  <input type="Text" v-model="newRow.location" placeholder="Enter Address"/>
-  <button @click="enterData" >Add</button>
-  <Button :person="person" />
+  <ul>
+  <li v-for="tab of tabs" :key="tab" @click="currentTab=tab"  :class="['tab-button', { active: currentTab === tab }]"><button>{{tab}}</button></li>
+</ul>
+
+  
+  <component :is="currentTab"> 
+  </component> 
+
+  
+  
+ 
    <!-- <p>{{ person }}</p> -->
 </template>
 
 <script>
-import Button from './button.vue';
+import Enter from './Enter.vue';
+import Home from './Home.vue';
+import About from './About.vue';
 export default {
   name: 'App',
   data(){
     return{
-      person:[],
-      newRow: { name: "", color:"",location: "" },
+      tabs:[
+        'Home',
+        'About',
+        'Enter'
+      ],
+      currentTab:'Home',
     }
   },
   components: {
-    Button
-  },
-  methods:{
-    enterData(){
-     
-            this.person.push({ ...this.newRow });
-            this.newRow.name = "";
-            this.newRow.color = "";
-            this.newRow.location = "";
-    }
+    Home,
+    About,
+    Enter
+
   }
+  
 }
 </script>
+
+<style scoped>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li button {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li button:hover {
+  background-color: #111;
+}
+button{
+  background:none;
+  border:none;
+}
+</style>
