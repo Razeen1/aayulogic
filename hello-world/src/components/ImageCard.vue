@@ -16,23 +16,8 @@
         props:[
         'person',
         ],
-        altDescription:'',
-        url:'',
+        
     }
-    // fetch(
-    //     "https://api.unsplash.com/photos/random/?count=5&client_id=Xy5FVewzbaH374GWrbZQnsBRLFEyU2l7q9iBt6981g8"
-    
-    // )
-    // .then((response) => {
-    //     response.json().then((data) => {
-    //         this.altDescription = data[0].alt_description;
-    //         this.url=data[0].url;
-            
-    //       })
-    //       .catch((err) => {
-    //       console.error(err);
-    //     });
-    // });
 
 
 </script>

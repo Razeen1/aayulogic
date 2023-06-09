@@ -2,7 +2,6 @@
     <h1>
         Enter Your Details
     </h1>
-    <Transition>
     <div class="forms" >
     <input type="Text" v-model="newRow.name" placeholder="Enter Name"/><br>
     <input type="Text" v-model="newRow.location" placeholder="Enter Address"/>
@@ -17,7 +16,7 @@
     <button @click="enterData" >Add</button>
   <ImageCard :person="person" />
     </div>
-  </Transition>
+ 
 </template>
 
 <script>
@@ -36,11 +35,12 @@ import ImageCard from './ImageCard.vue';
   },
   methods:{
     enterData(){
+      if(this.newRow.name){
             this.person.push({ ...this.newRow });
             this.newRow.name = "";
             this.newRow.color = "";
             this.newRow.location = "";
-      
+      }
     }
   }
 }
