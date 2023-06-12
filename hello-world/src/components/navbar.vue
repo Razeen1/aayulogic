@@ -35,18 +35,20 @@ ul {
   }
 </style>
 <script>
+
+import { useRoute } from 'vue-router';
+
 export default{
 name:"nav-bar",
-data()
+setup()
 {
+  const route = useRoute();
+  let currentTab=route.name;
+  console.log(currentTab);
 return{
-  currentTab:'home',
+  currentTab
 }
 },
-methods:{
-  getRoute(){
-    this.currentTab=this.$route.name;
-  }
-}
+
 }
 </script>

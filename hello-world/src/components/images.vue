@@ -2,12 +2,14 @@
 
     <div class="cards" >
       <div class="card" v-for="imgD of imgData" :key="imgD.id" >
-        <router-link to="/imagedesc">
+        <router-link :to="{name: 'imagedesc', params:{id:imgD.id}}" >
+
       <img :src="imgD.urls.regular" alt="images">
       <div class="container">
       <h4>{{imgD.alt_description.toUpperCase()}}</h4> 
       
     </div>
+  
   </router-link>
   </div>
   </div> 
@@ -21,6 +23,12 @@
     props: [
         "imgData",
     ],
+    data(){
+      return{
+        imageView:{}
+      }
+    }
+  
 }
   
   
@@ -32,8 +40,6 @@
     transition: 0.3s;
     width: 20%;
     margin:20px;
-    
-    
   }
   
   .card:hover {

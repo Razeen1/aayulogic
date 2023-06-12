@@ -9,6 +9,7 @@ const routes = [
     name: "home",
     component: HomeView,
   },
+
   {
     path: "/enter",
     name: "enter",
@@ -21,10 +22,11 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
-    path: "/imagedesc",
+    path: "/imagedesc/:id",
     name: "imagedesc",
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/imageView.vue"),
+    props: true,
   },
   {
     path: "/:pathMatch(.*)*",
