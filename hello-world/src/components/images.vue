@@ -36,14 +36,14 @@
   
   <style scoped>
   .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
     transition: 0.3s;
     width: 20%;
     margin:20px;
   }
   
   .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: -6px 10px 16px 0 rgba(0,0,0,0.3);
   }
   
   .container {
