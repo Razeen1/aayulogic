@@ -7,10 +7,6 @@
   <component :is="currentTab"> 
   </component> 
 
-  
-  
- 
-   <!-- <p>{{ person }}</p> -->
 </template>
 
 <script>

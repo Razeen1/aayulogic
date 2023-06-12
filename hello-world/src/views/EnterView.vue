@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import ImageCard from './ImageCard.vue';
+import ImageCard from '@/components/ImageCard.vue';
     export default{
     name:'enter-detail',
     data(){
