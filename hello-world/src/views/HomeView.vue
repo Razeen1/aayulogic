@@ -4,9 +4,6 @@
       Home
     </h1>
     <p>Some images</p>
-    <div class="slideshow-container">
-
-    </div>
     <br>
   </div>
 
