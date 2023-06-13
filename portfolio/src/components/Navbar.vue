@@ -17,7 +17,7 @@
                 </v-toolbar-items>
                
             </v-app-bar>
-            <v-navigation-drawer location="left" v-model="drawer" temporary style="height: 50%" color="blue-darken-1">
+            <v-navigation-drawer location="left" v-model="drawer" temporary style="height: 100%" color="blue-darken-1">
                 <v-list v-model="drawer" temporary>
                     <v-list-item v-for="(item, index) in items" :key="index" :to="item.path">
                         <v-icon left dark :icon="item.icon"></v-icon>
