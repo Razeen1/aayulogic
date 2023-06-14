@@ -3,7 +3,7 @@
         <v-layout>
             <!-- <v-system-bar color="deep-purple darken-3"></v-system-bar> -->
 
-            <v-app-bar color="blue-darken-1" density='compact' flat=true fixed  >
+            <v-app-bar :color="bg" density='compact' flat=true fixed :class="txt">
 
                 <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"
                     class="hidden-sm-and-up"></v-app-bar-nav-icon>
@@ -15,7 +15,7 @@
                         {{ item.title }}
                     </v-btn>
                 </v-toolbar-items>
-               
+
             </v-app-bar>
             <v-navigation-drawer location="left" v-model="drawer" temporary style="height: 100%" color="blue-darken-1">
                 <v-list v-model="drawer" temporary>
@@ -36,13 +36,34 @@ export default {
     data: () => ({
         drawer: false,
         group: null,
+        is_transparent: true,
+        bg: 'transparent',
+        txt: 'text-blue-darken-3',
         items: [
             { title: 'Home', path: '/', icon: 'mdi-home-circle' },
             { title: 'About', path: '/about', icon: 'mdi-information' },
             { title: 'Contact', path: '/contact', icon: 'mdi-contacts' }
         ],
     }),
-
+    mounted() {
+        window.onscroll = () => {
+            this.changeColor();
+        };
+    },
+    methods: {
+        changeColor() {
+            if (
+                document.body.scrollTop > 100 ||
+                document.documentElement.scrollTop > 100
+            ) {
+                this.bg = 'blue-darken-2';
+                this.txt = 'text-white';
+            } else {
+                this.bg = 'transparent';
+                this.txt = 'text-blue-darken-3';
+            }
+        },
+    },
     watch: {
         group() {
             this.drawer = false
