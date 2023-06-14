@@ -61,6 +61,14 @@
     </div>
 
   </v-card>
+  <v-card>
+    <div class="d-flex flex-column justify-center fill-height align-center  mt-16 mr-16 ml-16 mb-16 text-justify ">
+      <h1 class="text-h2 font-weight-light">Languages</h1>
+
+
+    </div>
+
+  </v-card>
 </template>
 <style>
 /* .hometxt {
