@@ -36,7 +36,7 @@
             eu,
             fermentum est. Quisque ut magna posuere, congue augue sit amet, condimentum metus.
           </p>
-          <v-img :width="600" aspect-ratio="4/3" cover src="../assets/homeProfile.jpg" class="mt-6"></v-img>
+          <v-img width="600" aspect-ratio="4/3" cover src="../assets/homeProfile.jpg" class="mt-6"></v-img>
         </div>
       </div>
     </div>
