@@ -11,7 +11,7 @@
         class="d-flex flex-column justify-center fill-height align-center text-blue-darken-4 mt-16 mr-16 ml-16 text-justify  mb-16">
         <h1 class="text-h2 font-weight-light">Hi!</h1>
         <h4 class="text-h4 font-weight-thin">I am John Doe</h4>
-        <div class="d-flex">
+        <div class="d-flex ">
           <p class="text-subtitle-1 mt-6 font-weight-light mr-6 ">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dolor ligula, finibus nec tellus sit amet,
             placerat
@@ -36,7 +36,8 @@
             eu,
             fermentum est. Quisque ut magna posuere, congue augue sit amet, condimentum metus.
           </p>
-          <v-img width="600" aspect-ratio="4/3" cover src="../assets/homeProfile.jpg" class="mt-6"></v-img>
+          <v-img max-width="600" max-height="100%" aspect-ratio="1/1" cover src="../assets/homeProfile.jpg"
+            class="mt-6 d-none d-lg-flex"></v-img>
         </div>
       </div>
     </div>

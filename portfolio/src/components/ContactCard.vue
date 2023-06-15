@@ -1,14 +1,14 @@
 <template>
     <v-card width="500px " class="ma-6 " flat>
         <form @submit.prevent="submit">
-            <v-text-field label="Name" variant="outlined" class="mt-2"></v-text-field>
+            <v-text-field label="Name" variant="outlined" class="mt-2 mb-3" hint="Enter Your Full Name"></v-text-field>
 
 
-            <v-text-field label="E-mail" variant="outlined"></v-text-field>
+            <v-text-field label="E-mail" variant="outlined" hint="Enter your Email" class="mb-3"></v-text-field>
 
 
-
-            <v-btn class="me-4" color="blue-darken-2" type="submit"> submit </v-btn>
+            <v-textarea label="Message" variant="outlined" class="mb-3" hint="Leave me a message"></v-textarea>
+            <v-btn class="me-4 mb-4" color="blue-darken-2" type="submit"> Submit </v-btn>
 
 
         </form>
