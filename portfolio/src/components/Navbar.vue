@@ -11,7 +11,7 @@
                 <v-spacer></v-spacer>
 
                 <v-toolbar-items class="d-none d-sm-flex mx-6">
-                    <v-btn flat v-for="item in items" :key="item.title" :to="item.path">
+                    <v-btn flat v-for="item in items" :key="item.title" :to="item.path" variant="plain" :ripple="false">
                         {{ item.title }}
                     </v-btn>
                 </v-toolbar-items>

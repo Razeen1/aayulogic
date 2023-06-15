@@ -10,32 +10,30 @@
     <div
       class="d-flex flex-column justify-center fill-height align-center text-blue-darken-4 mt-16 mr-16 ml-16 mb-16 text-justify ">
       <h1 class="text-h2 font-weight-light">Studies</h1>
+      <h5 class="text-h6 font-weight-thin">Which schools did I attend?</h5>
+      <v-timeline side="end" align="start" class="mt-6">
+        <v-timeline-item dot-color="blue" size="small" v-for="item in items" :key="item.name" :icon="item.icon" fill-dot>
+          <div class="d-flex">
+            <strong class="me-4">{{ item.year }}</strong>
+            <div>
+              <strong>{{ item.title }}</strong>
+              <div class="text-caption">
+                {{ item.desc }}
+              </div>
+            </div>
+          </div>
+        </v-timeline-item>
+      </v-timeline>
 
-      <v-item-group multiple class="mt-7 ">
-        <v-container>
-          <v-row v-for="item in items" :key="item.name" cols="12" class="d-flex flex-column ma-6">
-            <v-hover v-slot="{ isHovering, props }">
-              <v-item>
-                <v-card width="700" flat variant="outlined" v-bind="props" :color="isHovering ? 'blue' : 'grey'">
 
-                  <v-card-title class=" text-h6 text-black font-weight-thin"> {{ item.title }} </v-card-title>
-                  <v-card-subtitle class=" text-subtitle text-black font-weight-thin mb-2">
-                    {{ item.desc }}
-                  </v-card-subtitle>
 
-                </v-card>
-              </v-item>
-            </v-hover>
-          </v-row>
-        </v-container>
-      </v-item-group>
     </div>
 
   </v-card>
   <v-card color="blue-darken-2">
     <div class="d-flex flex-column justify-center fill-height align-center  mt-16 mr-16 ml-16 mb-16 text-justify ">
       <h1 class="text-h2 font-weight-light">Languages</h1>
-
+      <h5 class="text-h6 font-weight-thin">Languages I work with</h5>
       <v-item-group multiple class="mt-7 ">
         <v-container>
 
@@ -71,8 +69,8 @@
 
             <v-col v-for="project in projects" :key="project.name" cols="14">
               <v-hover v-slot="{ isHovering, props }">
-                <v-card color="blue-darken-2" v-bind="props" width="200px" height="120px" class=" align-right
-                                                  justify-center">
+                <v-card color="blue-darken-2" v-bind="props" width="200px" height="120px"
+                  class=" align-right justify-center" to="/">
 
                   <v-fade-transition>
                     <div v-if="isHovering"
@@ -109,9 +107,9 @@ export default {
   name: "aboutView",
   data: () => ({
     items: [
-      { title: 'College of College', desc: 'XYZ street' },
-      { title: 'College of College', desc: 'XYZ street' },
-      { title: 'College of College', desc: 'XYZ street' },
+      { title: 'St. Xaviers College', desc: 'Maitigahr, Kathmandu', icon: 'mdi-badge-account', year: '2018' },
+      { title: 'Chealsea International Academy', desc: 'Baneshwor,Kathmandu', icon: 'mdi-school', year: '2016' },
+      { title: 'College of College', desc: 'XYZ street', icon: "mdi-book-education", year: '2010' },
     ],
     logos: [
       { link: 'https://cdn.cdnlogo.com/logos/j/44/javascript.svg', title: "JS" },
