@@ -5,7 +5,7 @@
 
                 <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"
                     class="hidden-sm-and-up"></v-app-bar-nav-icon>
-                <v-toolbar-title class="ml-6">RealHrSoft
+                <v-toolbar-title class="ml-6">RealHRsoft
                     <!-- <v-img src="../assets/logo.png" height="100%" width="30%"></v-img> -->
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
@@ -38,12 +38,12 @@ export default {
         group: null,
         is_transparent: true,
         bg: 'transparent',
-        txt: 'text-white',
+        txt: 'text-white ',
         items: [
             { title: 'Home', path: '/' },
             { title: 'About', path: '/about' },
             { title: 'Contact', path: '/contact' },
-            { title: 'Feature', path: '/feature' },
+            { title: 'Feature', path: '/#feature' },
             { title: 'Blog', path: '/blog' },
             { title: 'FAQ', path: '/faq' }
         ],
@@ -60,7 +60,7 @@ export default {
                 document.documentElement.scrollTop > 100
             ) {
                 this.bg = 'white';
-                this.txt = 'text-blue-darken-5';
+                this.txt = 'text-blue-darken-4 elevation-4';
             } else {
                 this.bg = 'transparent';
                 this.txt = 'text-white';
