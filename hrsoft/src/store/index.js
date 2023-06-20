@@ -1,14 +1,15 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 
-export default createStore({
-  state: {
-  },
-  getters: {
+const store = createStore({
+  state() {
+    return {
+      dialog: false,
+    };
   },
   mutations: {
+    changeState(state) {
+      state.dialog = !state.dialog;
+    },
   },
-  actions: {
-  },
-  modules: {
-  }
-})
+});
+export default store;

@@ -1,29 +1,29 @@
 <template>
-    <v-card color="blue-darken-2" rounded="0" class="overflow-visible " flat style='z-index:99'>
+    <v-card style="background: linear-gradient(to left, rgb(0, 209, 209), rgb(0, 118, 252));z-index:99" rounded="0"
+        class="overflow-visible " flat>
         <v-container>
             <v-row>
                 <v-col cols="12" md="6">
                     <div>
-                        <div class=" d-flex flex-column justify-center fill-height align-left  mt-16 mr-6 text-justify ">
-                            <h1 class=" text-h1 font-weight-bold mt-16">Hello World</h1>
-                            <h5 class="text-subtitle-1 font-weight-regular">Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit.
-                                Quidem
-                                assumenda
-                                dicta, sunt tempora neque quae modi facilis quia pariatur sit iusto atque voluptatem
-                                delectus recusandae
-                                nulla
-                                optio cum aut veritatis?</h5>
+                        <div
+                            class=" d-flex flex-column justify-center fill-height align-left  mt-16 mr-6 text-justify text-white ">
+                            <h2 class=" text-h2 font-weight-bold mt-16">Nepal's #1<br />
+                                HR Solution</h2>
+                            <h5 class="text-subtitle-1 font-weight-regular">Build a successful team for your successful
+                                tenure with our
+                                multi-function HR Platform, built for HR Teams by HR Teams</h5>
                             <div>
-                                <v-btn class="mt-6 mb-6 mr-6 text-blue-darken-4" to="/#contact">Click Me</v-btn>
+                                <v-btn class="mt-6 mb-6 mr-6 text-white" @click="this.$store.commit('changeState');"
+                                    color="teal-accent-3">Request a demo
+                                </v-btn>
                                 <v-btn class="mt-6 mb-6 text-blue-darken-4" to="/#feature">Learn More</v-btn>
                             </div>
                         </div>
                     </div>
                 </v-col>
                 <v-col cols="12" md="6">
-                    <div class=" d-flex flex-column  align-center align-md-end mt-16  mb-16">
-                        <v-img src="../assets/logo.svg" width="70%" aspect-ratio="16/9" class="mt-10"></v-img>
+                    <div class=" d-flex flex-column  align-center  mt-16  ">
+                        <v-img src="../assets/herobanner.png" width="100%" class=""></v-img>
                     </div>
                 </v-col>
             </v-row>
@@ -36,9 +36,10 @@
                                     <div>
                                         <h1 class="text-blue-darken-3"><vue3-autocounter ref='counter'
                                                 :startAmount="item.start" :endAmount='item.end' :duration='2.5'
-                                                separator=',' decimalSeparator='.' :autoinit='true' />
+                                                separator=',' decimalSeparator='.' :autoinit='true' :prefix='item.prefix'
+                                                :suffix='item.suffix' />
                                         </h1>
-                                        <h4>{{ item.title }}</h4>
+                                        <h5 class="font-weight-medium">{{ item.title }}</h5>
                                     </div>
                                 </v-col>
                             </v-row>
@@ -56,10 +57,10 @@ export default {
 
     data: () => ({
         count: [
-            { title: "Downloads", start: 0, end: 50000 },
-            { title: "Users", start: 0, end: 290000 },
-            { title: "Clients", start: 0, end: 200 },
-            { title: "Ranking", start: 600, end: 1 },
+            { title: "Employees using RealHRsoft", start: 0, end: 3700, suffix: '+' },
+            { title: "Clients using RealHRsoft", start: 0, end: 15, suffix: '+' },
+            { title: "Client Support Satisfaction", start: 0, end: 100, suffix: '%' },
+            { title: "Future Ready Technology Used", start: 15, end: 1, prefix: '#' },
         ],
 
 
