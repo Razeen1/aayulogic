@@ -1,7 +1,7 @@
 <template>
     <v-card style='z-index:20001'>
         <v-layout>
-            <v-app-bar :color="bg" density='compact' flat=true fixed :class="txt">
+            <v-app-bar :color="bg" flat=true fixed :class="txt">
 
                 <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"
                     class="hidden-sm-and-up"></v-app-bar-nav-icon>
@@ -41,11 +41,11 @@ export default {
         txt: 'text-white ',
         items: [
             { title: 'Home', path: '/' },
-            { title: 'About', path: '/about' },
-            { title: 'Contact', path: '/contact' },
             { title: 'Feature', path: '/#feature' },
-            { title: 'Blog', path: '/blog' },
-            { title: 'FAQ', path: '/faq' }
+            { title: 'About', path: '/#about' },
+            { title: 'Contact', path: '/#contact' },
+            { title: 'Blog', path: '/#blog' },
+            { title: 'FAQ', path: '/#faq' }
         ],
     }),
     mounted() {
