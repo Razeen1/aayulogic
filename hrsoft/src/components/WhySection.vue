@@ -7,18 +7,21 @@
                 <v-row>
 
                     <v-col v-for="item in items" :key="item.name" cols="12" md="4">
-                        <v-item>
-                            <v-lazy :min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
-                                <v-card class="mx-auto elevation-4">
-                                    <v-img :src="require('../assets/' + item.imgLink)" height="70px" class="mt-10"></v-img>
-                                    <v-card-title class="text-subtitle-2 font-weight-medium mt-5 mb-5"> {{ item.title }}
-                                    </v-card-title>
-                                    <v-card-text class="text-caption mb-6">
-                                        {{ item.desc }}
-                                    </v-card-text>
-                                </v-card>
-                            </v-lazy>
-                        </v-item>
+                        <v-lazy :min-height="200" :options="{ 'threshold': 0.2 }" transition="slide-x-reverse-transition">
+                            <v-item>
+                                <v-lazy :min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
+                                    <v-card class="mx-auto elevation-4">
+                                        <v-img :src="require('../assets/' + item.imgLink)" height="70px"
+                                            class="mt-10"></v-img>
+                                        <v-card-title class="text-subtitle-2 font-weight-medium mt-5 mb-5"> {{ item.title }}
+                                        </v-card-title>
+                                        <v-card-text class="text-caption mb-6">
+                                            {{ item.desc }}
+                                        </v-card-text>
+                                    </v-card>
+                                </v-lazy>
+                            </v-item>
+                        </v-lazy>
                     </v-col>
 
                 </v-row>

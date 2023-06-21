@@ -5,6 +5,7 @@ import store from "./store";
 import vuetify from "./plugins/vuetify";
 import { loadFonts } from "./plugins/webfontloader";
 import Vue3Autocounter from "vue3-autocounter";
+import "@/assets/main.scss";
 
 loadFonts();
 

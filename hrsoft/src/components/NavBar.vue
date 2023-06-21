@@ -5,9 +5,9 @@
 
                 <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"
                     class="hidden-sm-and-up"></v-app-bar-nav-icon>
-                <v-toolbar-title class="ml-6">
-                    <router-link to="/"><v-img :src="require('../assets/' + srclink)" height="auto" width="60%"
-                            class="pa-4"></v-img></router-link>
+                <v-toolbar-title class="ml-1 ml-md-6">
+                    <router-link to="/"><v-img :src="require('../assets/' + srclink)" height="auto"
+                            class="pa-1 pa-md-5 pa-lg-16 "></v-img></router-link>
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
 

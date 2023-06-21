@@ -1,9 +1,9 @@
 <template>
     <v-card class="d-flex flex-column align-center  text-center" flat>
-        <h2 class="text-blue-darken-4 mt-14">Trusted by Top HR Teams in Nepal</h2>
-        <v-item-group multiple class="mt-10 mb-16">
+        <h2 class="text-blue-darken-4 mt-6 mt-md-14">Trusted by Top HR Teams in Nepal</h2>
+        <v-item-group multiple class="mt-md-10 mb-md-16">
             <v-container>
-                <v-row class="mr-16 ml-16">
+                <v-row class="mr-md-16 ml-md-16">
 
                     <v-col v-for="item in items" :key="item.name" cols="12" md="4">
                         <v-item>
@@ -12,7 +12,7 @@
                                     <v-img :src="require('../assets/' + item.imgLink)" height="40px"
                                         class="mt-10 ml-5"></v-img>
 
-                                    <v-card-text class="text-caption mb-6 text-justify">
+                                    <v-card-text class="text-caption mb-md-6 text-justify">
                                         {{ item.title }}
                                     </v-card-text>
                                 </v-card>
@@ -23,9 +23,11 @@
                 </v-row>
             </v-container>
         </v-item-group>
+        <SlideReview></SlideReview>
     </v-card>
 </template>
 <script>
+import SlideReview from './SlideReview.vue';
 export default {
     name: "whySection",
     data: () => ({
@@ -35,6 +37,7 @@ export default {
             { title: 'To continue to grow, we had to ensure our business processes, including HR are smart, efficient and we got that with RealHRsoft. Using RealHRsoft we have been able to set up a user-friendly system that allows us to track attendance and leaves, streamline our monthly payroll process and reduce costs and paperwork.', imgLink: "good.png" },
         ],
     }),
+    components: { SlideReview }
 }
 </script>
 

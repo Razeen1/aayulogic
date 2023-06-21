@@ -1,22 +1,22 @@
 <template>
-    <v-card style="background: linear-gradient(to left, rgb(0, 209, 209), rgb(0, 118, 252));z-index:99" rounded="0"
+    <v-card style="background: linear-gradient(to left, rgb(0, 161, 161), rgb(0, 118, 252));z-index:99" rounded="0"
         class="overflow-visible " flat>
         <v-container>
-            <v-row>
+            <v-row class="mb-md-16">
                 <v-col cols="12" md="6">
                     <div>
                         <div
                             class=" d-flex flex-column justify-center fill-height align-left  mt-16 mr-6 text-justify text-white ">
-                            <h2 class=" text-h2 font-weight-bold mt-16">Nepal's #1<br />
+                            <h2 class=" text-h2 font-weight-bold mt-16 heroTitle">Nepal's #1<br />
                                 HR Solution</h2>
                             <h5 class="text-subtitle-1 font-weight-regular">Build a successful team for your successful
                                 tenure with our
                                 multi-function HR Platform, built for HR Teams by HR Teams</h5>
                             <div>
-                                <v-btn class="mt-6 mb-6 mr-6 text-white" @click="this.$store.commit('changeState');"
-                                    color="teal-accent-3">Request a demo
+                                <v-btn class="mt-md-6 mr-2 mb-2 mt-2 mb-md-6 mr-md-6 text-white"
+                                    @click="this.$store.commit('changeState');" color="#0BB4AF">Request a demo
                                 </v-btn>
-                                <v-btn class="mt-6 mb-6 text-blue-darken-4" to="/#feature">Learn More</v-btn>
+                                <v-btn class="mt-md-6 mb-md-6 text-blue-darken-4" to="/#feature">Learn More</v-btn>
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,8 @@
                     <v-item-group multiple>
                         <v-container>
                             <v-row>
-                                <v-col v-for="item in count" :key="item.id" class=" align-center text-center " width="20%">
+                                <v-col v-for="item in count" :key="item.id" class=" align-center text-center " width="20%"
+                                    cols="8" sm="3">
                                     <div>
                                         <h1 class="text-blue-darken-3"><vue3-autocounter ref='counter'
                                                 :startAmount="item.start" :endAmount='item.end' :duration='2.5'
@@ -67,3 +68,10 @@ export default {
     }),
 }
 </script>
+
+<style>
+.heroTitle {
+    letter-spacing: 3px !important;
+    line-height: 1.2 !important;
+}
+</style>
