@@ -1,5 +1,5 @@
 <template>
-    <v-card class="d-flex flex-column align-center  text-center" color="#eefaff" flat>
+    <v-card class="d-flex flex-column align-center  text-center" color="#F0FBFF99" flat>
         <h2 class="text-blue-darken-4 mt-14">Why do you need RealHRsoft to Manage<br />
             your most Important Resources?</h2>
         <v-item-group multiple class="mt-10 mb-16">
@@ -7,21 +7,27 @@
                 <v-row>
 
                     <v-col v-for="item in items" :key="item.name" cols="12" md="4">
-                        <v-lazy :min-height="200" :options="{ 'threshold': 0.2 }" transition="slide-x-reverse-transition">
-                            <v-item>
-                                <v-lazy :min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
-                                    <v-card class="mx-auto elevation-4">
-                                        <v-img :src="require('../assets/' + item.imgLink)" height="70px"
-                                            class="mt-10"></v-img>
-                                        <v-card-title class="text-subtitle-2 font-weight-medium mt-5 mb-5"> {{ item.title }}
-                                        </v-card-title>
-                                        <v-card-text class="text-caption mb-6">
-                                            {{ item.desc }}
-                                        </v-card-text>
-                                    </v-card>
-                                </v-lazy>
-                            </v-item>
-                        </v-lazy>
+
+                        <v-item>
+                            <v-lazy :min-height="200" :options="{ 'threshold': 0.2 }" transition="fab-transition">
+                                <v-hover>
+                                    <template v-slot:default="{ isHovering, props }">
+                                        <v-card v-bind="props" class="mx-auto "
+                                            :class="isHovering ? 'elevation-6' : 'elevation-1'">
+                                            <v-img :src="require('../assets/' + item.imgLink)" height="70px"
+                                                class="mt-10"></v-img>
+                                            <v-card-title class="text-subtitle-2 font-weight-medium mt-5 mb-5"> {{
+                                                item.title }}
+                                            </v-card-title>
+                                            <v-card-text class="text-caption mb-6">
+                                                {{ item.desc }}
+                                            </v-card-text>
+                                        </v-card>
+                                    </template>
+                                </v-hover>
+                            </v-lazy>
+                        </v-item>
+
                     </v-col>
 
                 </v-row>

@@ -3,8 +3,7 @@
         <v-layout>
             <v-app-bar :color="bg" flat=true fixed :class="txt">
 
-                <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"
-                    class="hidden-sm-and-up"></v-app-bar-nav-icon>
+
                 <v-toolbar-title class="ml-1 ml-md-6">
                     <router-link to="/"><v-img :src="require('../assets/' + srclink)" height="auto"
                             class="pa-1 pa-md-5 pa-lg-16 "></v-img></router-link>
@@ -17,23 +16,30 @@
                     </v-btn>
                 </v-toolbar-items>
 
+                <v-hover>
+                    <template v-slot:default="{ isHovering, props }">
+                        <v-btn v-bind=props @click="this.$store.commit('changeState');" variant="flat"
+                            :color="isHovering ? 'white' : '#0BB4AF'"
+                            :class="isHovering ? 'text-blue-darken-3' : 'text-white'" class=" d-none d-sm-flex mr-5">
+                            Request a Trial
+                        </v-btn>
 
-
-                <v-btn @click="this.$store.commit('changeState');" variant="outlined" color="teal-accent-3"
-                    class="text-white d-none d-sm-flex">
-                    Request a Demo
-                </v-btn>
+                    </template>
+                </v-hover>
+                <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"
+                    class="hidden-sm-and-up"></v-app-bar-nav-icon>
 
             </v-app-bar>
 
-            <v-navigation-drawer location="left" v-model="drawer" temporary style="height: 100%" color="blue-darken-1">
+            <v-navigation-drawer location="right" v-model="drawer" temporary
+                style="height: 100%; background: linear-gradient(60deg, #0F4EA5 0%, #0FA597 100%);" class="text-white">
                 <v-list v-model="drawer" temporary>
                     <v-list-item v-for="(item, index) in items" :key="index" :to="item.path">
                         <v-list-item-title>{{ item.title }}</v-list-item-title>
                     </v-list-item>
                     <v-list-item>
                         <v-list-item-title @click="this.$store.commit('changeState');">Request a
-                            Demo</v-list-item-title>
+                            Demo </v-list-item-title>
                     </v-list-item>
                 </v-list>
             </v-navigation-drawer>

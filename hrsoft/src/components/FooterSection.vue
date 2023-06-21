@@ -1,5 +1,5 @@
 <template>
-    <v-card style="background: linear-gradient(to right, rgb(0, 209, 209), rgb(0, 118, 252));z-index:99" rounded="0" flat>
+    <v-card style="background: linear-gradient(120deg, #0FA597 0%, #0F4EA5 100%);z-index:99" rounded="0" flat>
         <v-container class="mr-md-16 ml-md-16 pl-md-16 pa-md-16">
             <v-row class="mr-md-10 ml-md-10">
                 <v-col cols="12" md="6" class="pr-16">
@@ -44,8 +44,8 @@
                 </v-col>
             </v-row>
             <v-divider color="white" class="mt-10" :thickness="2"></v-divider>
-            <v-row class="mt-10">
-                <v-col cols="8" md="3" class="pr-16">
+            <v-row class="mt-10 d-flex align-center align-md-start justify-center justify-md-start">
+                <v-col cols="8" md="3" class="pr-md-16">
                     <v-img src="../assets//logoWhite.png"></v-img>
                     <div class="d-flex justify-space-evenly mt-4 pr-6 pl-6"><v-icon icon="mdi-instagram"
                             color="white"></v-icon><v-icon icon="mdi-facebook" color="white"></v-icon><v-icon
@@ -53,7 +53,7 @@
                     </div>
                 </v-col>
                 <v-col cols="8" md="3">
-                    <div class=" d-flex flex-column  align-left   text-justify text-white ">
+                    <div class=" d-flex flex-column  align-center align-md-start   text-justify text-white ">
                         <h2 class=" text-subtitle-1 font-weight-bold mb-1">Contact</h2>
                         <h5 class="text-caption font-weight-regular"> Minbhawan, Kathmandu</h5>
 
@@ -68,7 +68,7 @@
 
 
 
-                    <div class=" d-flex flex-column  align-left   text-justify text-white ">
+                    <div class=" d-flex flex-column  align-center align-md-start    text-justify text-white ">
                         <h2 class=" text-subtitle-1 font-weight-bold mb-1"> Links</h2>
                         <h5 class="text-caption font-weight-regular"> Contact Us</h5>
                         <h5 class="text-caption font-weight-regular">About Us</h5>
@@ -78,7 +78,7 @@
                     </div>
                 </v-col>
                 <v-col cols="8" md="3">
-                    <div class=" d-flex flex-column  align-left   text-justify text-white ">
+                    <div class=" d-flex flex-column  align-center align-md-start    text-justify text-white ">
                         <h2 class=" text-subtitle-1 font-weight-bold mb-1"> Help
                         </h2>
                         <h5 class="text-caption font-weight-regular"> Frequently Asked Questions</h5>

@@ -1,6 +1,6 @@
 <template>
     <v-sheet class="mx-auto elevation-0 " width="100%">
-        <v-slide-group v-model="model" class="pa-4" center-active width="100%" :show-arrows="false">
+        <v-slide-group v-model="model" class="pa-4" center-active show-arrows="never">
             <v-slide-group-item v-for="item in logos" :key="item.name">
                 <v-card class="ma-4 rounded-xl elevation-0">
                     <v-img :src="require('../assets/' + item.link)" class="pa-6"></v-img>

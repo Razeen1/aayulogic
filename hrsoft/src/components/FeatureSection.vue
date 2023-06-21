@@ -1,11 +1,11 @@
 <template>
-    <v-card id="feature">
+    <v-card id="feature" flat>
         <div class="d-flex  flex-column align-center ma-2 ma-md-16 pa-md-10">
             <h2 class="text-blue-darken-4 mt-14">All the Functions your HR Team needs, and more!</h2>
             <v-container>
                 <v-row class=" align-center justify-center ">
                     <v-col cols="12" sm="6">
-                        <v-lazy :min-height="200" :options="{ 'threshold': 0.2 }" transition="slide-x-transition">
+                        <v-lazy :min-height="200" :options="{ 'threshold': 1 }" transition="slide-x-transition">
                             <v-card class=" align-center justify-center ma-md-16" flat>
                                 <v-list lines="two" class=" ma-md-4  ">
 
@@ -31,7 +31,7 @@
                     </v-col>
 
                     <v-col cols="12" sm="6">
-                        <v-lazy :min-height="200" :options="{ 'threshold': 0.9 }" transition="slide-x-reverse-transition">
+                        <v-lazy :min-height="200" :options="{ 'threshold': 1 }" transition="slide-x-reverse-transition">
                             <v-carousel v-model="model" hide-delimiters :show-arrows="false">
                                 <v-carousel-item v-for="(item, i) in slides" :key="item" :value="i"
                                     reverse-transition="fade-transition" transition="fade-transition">

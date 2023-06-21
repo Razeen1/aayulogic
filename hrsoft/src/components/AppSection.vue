@@ -6,22 +6,23 @@
                 <v-row
                     class="mr-md-16 ml-md-16 d-flex fill-height justify-end align-center flex-column d-md-flex flex-md-row">
 
-                    <v-col height="100%" class=" order-2 order-md-1">
+                    <v-col height="100%" class=" ">
 
-                        <div class="d-flex flex-column align-start align-md-end " v-for="(item, i) in features.slice(0, 4)"
+                        <div class="d-flex flex-column align-center align-md-end " v-for="(item, i) in features.slice(0, 4)"
                             :key="i">
                             <h6 class="text-subtitle-1 mt-2">{{ item.text }}</h6>
-                            <p class="text-caption mb-2  text-left text-md-right">{{ item.subtext }}</p>
+                            <p class="text-caption mb-2  text-center text-md-right">{{ item.subtext }}</p>
                         </div>
 
                     </v-col>
-                    <v-col class="order-1 order-md-2">
+                    <v-col class="">
                         <v-img src="../assets/phone.png" cover></v-img>
                     </v-col>
-                    <v-col height="100%" class="order-3 order-md-3">
-                        <div class="d-flex flex-column align-start " v-for="(item, i) in features.slice(4, 8)" :key="i">
+                    <v-col height="100%" class="">
+                        <div class="d-flex flex-column align-center align-md-start "
+                            v-for="(item, i) in features.slice(4, 8)" :key="i">
                             <h6 class="text-subtitle-1 mt-2">{{ item.text }}</h6>
-                            <p class="text-caption mb-2  text-left">{{ item.subtext }}</p>
+                            <p class="text-caption mb-2  text-center text-md-left">{{ item.subtext }}</p>
                         </div>
                     </v-col>
 

@@ -1,31 +1,32 @@
 <template>
-    <v-dialog v-model="this.$store.state.dialog" width="60%" style="z-index:9999;">
+    <v-dialog v-model="this.$store.state.dialog" width="80%" style="z-index:9999;">
         <v-card>
             <v-card-title>
-                <span class="text-h5">User Profile</span>
+                <span class="text-h5">Request a Free Trial</span>
             </v-card-title>
             <v-card-text>
                 <v-container>
                     <v-row>
                         <v-col cols="12" sm="6" md="4">
-                            <v-text-field label="First name*" required variant="solo"
+                            <v-text-field label="First name*" required variant="outlined"
                                 hint="Enter Your Full Name"></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="4">
-                            <v-text-field label="Middle name" variant="solo" hint="Enter Your Middle Name"></v-text-field>
+                            <v-text-field label="Middle name" variant="outlined"
+                                hint="Enter Your Middle Name"></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="4">
-                            <v-text-field variant="solo" label="Last name*" hint="Enter Your Last Name"
+                            <v-text-field variant="outlined" label="Last name*" hint="Enter Your Last Name"
                                 required></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="8" md="6">
-                            <v-text-field variant="solo" label="Mobile Number*" required></v-text-field>
+                            <v-text-field variant="outlined" label="Mobile Number*" required></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="8" md="6">
-                            <v-text-field variant="solo" label="Designation*" required></v-text-field>
+                            <v-text-field variant="outlined" label="Designation*" required></v-text-field>
                         </v-col>
                         <v-col cols="12">
-                            <v-text-field variant="solo" label="Select Data Option" required></v-text-field>
+                            <v-text-field variant="outlined" label="Select Data Option" required></v-text-field>
                         </v-col>
                         <v-col cols="12">
                             <v-checkbox><template v-slot:label>
@@ -38,11 +39,12 @@
 
                     </v-row>
                 </v-container>
-                <small>*indicates required field</small>
+
+                <v-btn color="teal-accent-3" variant="flat" class="mb-4">Request a
+                    demo </v-btn>
             </v-card-text>
 
-            <v-btn color="teal-accent-3" variant="solo" class="mb-4">Request a
-                demo </v-btn>
+
         </v-card>
     </v-dialog>
 </template>
