@@ -37,8 +37,20 @@
                                     reverse-transition="fade-transition" transition="fade-transition">
                                     <v-sheet color="transparent" tile height="100%">
                                         <div class="d-flex flex-column fill-height justify-center align-center text-center">
-                                            <v-img :src="require('../assets/' + item.src)"></v-img>
-
+                                            <div class="container mx-auto ">
+                                                <v-img :src="require('../assets/' + item.src + '/1.png')" class="image1"
+                                                    transition="slide-x-transition" width=100%>
+                                                </v-img>
+                                                <v-img :src="require('../assets/' + item.src + '/2.png')" class="image2"
+                                                    transition="slide-x-reverse-transition" width=100%>
+                                                </v-img>
+                                                <v-img :src="require('../assets/' + item.src + '/3.png')" class="image3"
+                                                    transition="slide-y-transition" max-width=100%>
+                                                </v-img>
+                                                <v-img :src="require('../assets/' + item.src + '/4.png')" class="image4"
+                                                    transition="slide-y-reverse-transition" width=100%>
+                                                </v-img>
+                                            </div>
                                         </div>
                                     </v-sheet>
                                 </v-carousel-item>
@@ -59,13 +71,13 @@ export default {
     data: () => ({
 
         slides: [
-            { text: 'Attendance Management', icon: 'mdi-account-check', subtext: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur. ', number: 0, src: 'Attendance.png' },
-            { text: 'Payroll Management', icon: 'mdi-cash', subtext: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur. ', number: 1, src: 'Payroll.png' },
-            { text: 'Leave Management', icon: 'mdi-calendar-check', subtext: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur. ', number: 2, src: 'Attendance.png' },
-            { text: 'Onboarding & Offboarding', icon: 'mdi-account-multiple-check', subtext: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur. ', number: 3, src: 'Attendance.png' },
-            { text: 'HR Intelligence', icon: 'mdi-brain', subtext: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur. ', number: 4, src: 'Attendance.png' },
-            { text: 'Task Management', icon: 'mdi-format-list-checkbox', subtext: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur. ', number: 5, src: 'Attendance.png' },
-            { text: 'Performance Appraisal', icon: 'mdi-finance', subtext: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur. ', number: 6, src: 'Attendance.png' },
+            { text: 'Attendance Management', icon: 'mdi-account-check', subtext: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur. ', number: 0, src: 'animations' },
+            { text: 'Payroll Management', icon: 'mdi-cash', subtext: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur. ', number: 1, src: 'animations2' },
+            { text: 'Leave Management', icon: 'mdi-calendar-check', subtext: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur. ', number: 2, src: 'animations' },
+            { text: 'Onboarding & Offboarding', icon: 'mdi-account-multiple-check', subtext: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur. ', number: 3, src: 'animations2' },
+            { text: 'HR Intelligence', icon: 'mdi-brain', subtext: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur. ', number: 4, src: 'animations' },
+            { text: 'Task Management', icon: 'mdi-format-list-checkbox', subtext: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur. ', number: 5, src: 'animations2' },
+            { text: 'Performance Appraisal', icon: 'mdi-finance', subtext: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur. ', number: 6, src: 'animations' },
 
         ],
         model: 0,
@@ -74,3 +86,57 @@ export default {
 
 }
 </script>
+
+<style scoped>
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+}
+
+/* @media only screen and (max-width: 600px) {
+    .container {
+        width: 50px;
+        height: 50px;
+
+    }
+} */
+
+.image1 {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.image2 {
+    position: absolute;
+    z-index: 2;
+    /* Place this image in front of the img1 */
+    width: 100%;
+    top: 100px;
+    left: 100px;
+}
+
+.image3 {
+    position: absolute;
+    z-index: 2;
+    /* Place this image in front of the img1 */
+    width: 100%;
+    bottom: 0px;
+    right: 100px;
+}
+
+.image4 {
+    position: absolute;
+    z-index: 2;
+    /* Place this image in front of the img1 */
+    width: 100%;
+
+    right: 100px;
+    bottom: 50px;
+}
+</style>

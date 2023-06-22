@@ -14,6 +14,27 @@
                     <v-btn flat v-for="item in items" :key="item.title" :to="item.path" variant="plain" :ripple="false">
                         {{ item.title }}
                     </v-btn>
+                    <v-menu transition="slide-x-transition">
+                        <template v-slot:activator="{ props }">
+                            <v-btn v-bind="props"> Features </v-btn>
+                        </template>
+                        <div class="d-flex felx-column w-100">
+                            <v-list class="pa-6">
+                                <v-list-item v-for="(item, i) in items" :key="i">
+                                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                                </v-list-item>
+                            </v-list>
+                            <v-list class="pa-6">
+                                <v-list-item v-for="(item, i) in items" :key="i">
+                                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                                </v-list-item></v-list>
+                            <v-list class="pa-6">
+                                <v-list-item v-for="(item, i) in items" :key="i">
+                                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                                </v-list-item>
+                            </v-list>
+                        </div>
+                    </v-menu>
                 </v-toolbar-items>
 
                 <v-hover>
@@ -31,13 +52,12 @@
 
             </v-app-bar>
 
-            <v-navigation-drawer location="right" v-model="drawer" temporary
-                style="height: 100%; background: linear-gradient(60deg, #0F4EA5 0%, #0FA597 100%);" class="text-white">
+            <v-navigation-drawer location="right" v-model="drawer" temporary :style="bgdrawer" class=" elevation-0">
                 <v-list v-model="drawer" temporary>
-                    <v-list-item v-for="(item, index) in items" :key="index" :to="item.path">
+                    <v-list-item v-for="(item, index) in items" :key="index" :to="item.path" variant="plain ">
                         <v-list-item-title>{{ item.title }}</v-list-item-title>
                     </v-list-item>
-                    <v-list-item>
+                    <v-list-item to="">
                         <v-list-item-title @click="this.$store.commit('changeState');">Request a
                             Demo </v-list-item-title>
                     </v-list-item>
@@ -58,10 +78,10 @@ export default {
         bg: 'transparent',
         txt: 'text-white ',
         srclink: 'logoWhite.png',
+        bgdrawer: 'background: linear-gradient(60deg, #0F4EA5 0%, #0FA597 100%); color:white;',
         items: [
             { title: 'Home', path: '/' },
-            { title: 'Feature', path: '/#feature' },
-            { title: 'About', path: '/#about' },
+            { title: 'About', path: '/#feature' },
             { title: 'Contact', path: '/#contact' },
             { title: 'Blog', path: '/#blog' },
             { title: 'FAQ', path: '/#faq' },
@@ -72,6 +92,7 @@ export default {
         window.onscroll = () => {
             this.changeColor();
         };
+
     },
     methods: {
         changeColor() {
@@ -82,10 +103,13 @@ export default {
                 this.bg = 'white';
                 this.txt = 'text-blue-darken-4 elevation-4';
                 this.srclink = 'logo.png';
+                this.bgdrawer = 'background: white; color:#0D47A1;';
+
             } else {
                 this.bg = 'transparent';
                 this.txt = 'text-white';
                 this.srclink = 'logoWhite.png';
+                this.bgdrawer = 'background: linear-gradient(60deg, #0F4EA5 0%, #0FA597 100%); color:white;';
             }
         },
     },
@@ -96,4 +120,3 @@ export default {
     },
 }
 </script>
-  

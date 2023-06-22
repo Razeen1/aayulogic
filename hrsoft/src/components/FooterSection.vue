@@ -27,11 +27,11 @@
                 <v-col cols="12" md="6">
                     <v-card class="ma-6 " flat color="transparent">
                         <form>
-                            <v-text-field label="Name" variant="solo" class=""></v-text-field>
-                            <v-text-field label="Company Name" variant="solo" class=""></v-text-field>
-                            <v-text-field label="E-mail" variant="solo"></v-text-field>
-                            <v-text-field label="Mobile Number" variant="solo"></v-text-field>
-                            <v-textarea label="Message" variant="solo" class=""></v-textarea>
+                            <v-text-field label="Name" variant="solo" class="" density="compact"></v-text-field>
+                            <v-text-field label="Company Name" variant="solo" density="compact"></v-text-field>
+                            <v-text-field label="E-mail" variant="solo" density="compact"></v-text-field>
+                            <v-text-field label="Mobile Number" variant="solo" density="compact"></v-text-field>
+                            <v-textarea label="Message" variant="solo" class="" density="compact"></v-textarea>
                             <div class="d-flex " width="100%">
                                 <v-btn class="mr-2">
                                     <v-icon icon="mdi-share-variant-outline"></v-icon></v-btn>
@@ -70,10 +70,13 @@
 
                     <div class=" d-flex flex-column  align-center align-md-start    text-justify text-white ">
                         <h2 class=" text-subtitle-1 font-weight-bold mb-1"> Links</h2>
-                        <h5 class="text-caption font-weight-regular"> Contact Us</h5>
-                        <h5 class="text-caption font-weight-regular">About Us</h5>
-                        <h5 class="text-caption font-weight-regular"> Blog</h5>
-                        <h5 class="text-caption font-weight-regular">Privacy Policy</h5>
+                        <router-link to="/">
+                            <h5 class="text-caption font-weight-regular"> Contact</h5>
+                        </router-link>
+
+                        <h5 class="text-caption font-weight-regular"><router-link to="/"> About Us</router-link> </h5>
+                        <h5 class="text-caption font-weight-regular"><router-link to="/"> Blog</router-link></h5>
+                        <h5 class="text-caption font-weight-regular"><router-link to="/"> Privacy Policy</router-link></h5>
 
                     </div>
                 </v-col>
@@ -90,4 +93,12 @@
         </v-container>
     </v-card>
 </template>
+<style scoped>
+a,
+a:hover,
+a:visited {
+    text-decoration: none !important;
+    color: white;
+}
+</style>
   

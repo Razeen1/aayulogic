@@ -84,6 +84,6 @@ export default {
 <style>
 .heroTitle {
     letter-spacing: 3px !important;
-    line-height: 1.2 !important;
+    line-height: 90px !important;
 }
 </style>
