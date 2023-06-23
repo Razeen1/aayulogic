@@ -13,7 +13,7 @@
                                 <v-hover>
                                     <template v-slot:default="{ isHovering, props }">
                                         <v-card v-bind="props" class="mx-auto "
-                                            :class="isHovering ? 'elevation-6' : 'elevation-1'">
+                                            :class="isHovering ? 'elevation-6' : 'elevation-0'">
                                             <v-img :src="require('../assets/' + item.imgLink)" height="70px"
                                                 class="mt-10"></v-img>
                                             <v-card-title class="text-subtitle-2 font-weight-medium mt-5 mb-5"> {{

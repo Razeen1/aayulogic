@@ -6,15 +6,15 @@
 
                 <v-toolbar-title class="ml-1 ml-md-6">
                     <router-link to="/"><v-img :src="require('../assets/' + srclink)" height="auto"
-                            class="pa-1 pa-md-5 pa-lg-16 "></v-img></router-link>
+                            class="pa-1  pa-md-5 pa-lg-16 "></v-img></router-link>
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
 
-                <v-toolbar-items class="d-none d-sm-flex mx-6">
+                <v-toolbar-items class="d-none d-sm-flex mx-md-6">
                     <v-btn flat v-for="item in items" :key="item.title" :to="item.path" variant="plain" :ripple="false">
                         {{ item.title }}
                     </v-btn>
-                    <v-menu transition="slide-x-transition">
+                    <!-- <v-menu transition="slide-x-transition">
                         <template v-slot:activator="{ props }">
                             <v-btn v-bind="props"> Features </v-btn>
                         </template>
@@ -34,7 +34,7 @@
                                 </v-list-item>
                             </v-list>
                         </div>
-                    </v-menu>
+                    </v-menu> -->
                 </v-toolbar-items>
 
                 <v-hover>
