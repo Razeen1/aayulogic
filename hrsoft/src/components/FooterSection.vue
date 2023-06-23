@@ -25,13 +25,18 @@
                     </div>
                 </v-col>
                 <v-col cols="12" md="6">
-                    <v-card class="ma-6 " flat color="transparent">
+                    <v-card class="ma-6 mt-2" flat color="transparent">
                         <form>
-                            <v-text-field label="Name" variant="solo" class="" density="compact"></v-text-field>
-                            <v-text-field label="Company Name" variant="solo" density="compact"></v-text-field>
-                            <v-text-field label="E-mail" variant="solo" density="compact"></v-text-field>
-                            <v-text-field label="Mobile Number" variant="solo" density="compact"></v-text-field>
-                            <v-textarea label="Message" variant="solo" class="" density="compact"></v-textarea>
+                            <v-text-field label="Name" variant="underlined" density="compact" class="text-white pt-2"
+                                color="white"></v-text-field>
+                            <v-text-field label="Company Name" variant="underlined" density="compact" class="text-white"
+                                color="white"></v-text-field>
+                            <v-text-field label="E-mail" variant="underlined" density="compact" class="text-white"
+                                color="white"></v-text-field>
+                            <v-text-field label="Mobile Number" variant="underlined" density="compact" class="text-white"
+                                color="white"></v-text-field>
+                            <v-textarea label="Message" variant="underlined" density="compact" class="text-white"
+                                color="white">"></v-textarea>
                             <div class="d-flex " width="100%">
                                 <v-btn class="mr-2">
                                     <v-icon icon="mdi-share-variant-outline"></v-icon></v-btn>
