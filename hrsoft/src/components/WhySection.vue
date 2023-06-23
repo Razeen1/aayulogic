@@ -6,7 +6,7 @@
             <v-container>
                 <v-row>
 
-                    <v-col v-for="item in items" :key="item.name" cols="12" md="4">
+                    <v-col v-for="item in items" :key="item.name" cols="12" sm="6" md="4">
 
                         <v-item>
                             <v-lazy :min-height="200" :options="{ 'threshold': 0.2 }" transition="fab-transition">

@@ -4,9 +4,9 @@
             <v-app-bar :color="bg" flat=true fixed :class="txt">
 
 
-                <v-toolbar-title class="ml-1 ml-md-6">
+                <v-toolbar-title class="ml-1 ml-md-2">
                     <router-link to="/"><v-img :src="require('../assets/' + srclink)" height="auto"
-                            class="pa-1  pa-md-5 pa-lg-16 "></v-img></router-link>
+                            class="pa-1  pa-md-5 pa-lg-16 ma-md-4 "></v-img></router-link>
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
 

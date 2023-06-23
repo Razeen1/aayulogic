@@ -5,10 +5,10 @@
             <v-container>
                 <v-row class="mr-md-16 ml-md-16">
 
-                    <v-col v-for="item in items" :key="item.name" cols="12" md="4">
+                    <v-col v-for="item in items" :key="item.name" cols="12" sm="6" md="4">
                         <v-item>
                             <v-lazy :min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
-                                <v-card class="d-flex flex-column align-start elevation-0" height="250px">
+                                <v-card class="d-flex flex-column align-start elevation-0" height="260px">
                                     <v-img :src="require('../assets/' + item.imgLink)" height="40px"
                                         class="mt-10 ml-5"></v-img>
 

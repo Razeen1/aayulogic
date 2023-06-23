@@ -7,7 +7,7 @@
                     <v-col cols="12" sm="6">
                         <v-lazy :min-height="200" :options="{ 'threshold': 1 }" transition="slide-x-transition">
                             <v-card class=" align-center justify-center ma-md-16" flat>
-                                <v-list lines="two" class=" ma-md-4  ">
+                                <v-list lines="two" class=" ma-md-4" active-class="features">
 
                                     <v-list-item v-for="(item, i) in slides" :key="i" :value="item" color="blue-darken-3"
                                         class=" pa-2" @click="model = item.number">
@@ -96,13 +96,27 @@ export default {
     height: 350px;
 }
 
-/* @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1300px) {
     .container {
-        width: 50px;
-        height: 50px;
-
+        width: 250px;
+        height: 250px;
     }
-} */
+
+    .image2 {
+        top: 50px !important;
+        left: 50px !important;
+    }
+
+    .image3 {
+        bottom: 0px !important;
+        right: 50px !important;
+    }
+
+    .image4 {
+        right: 50px !important;
+        bottom: 50px !important;
+    }
+}
 
 .image1 {
     position: absolute;
@@ -135,8 +149,12 @@ export default {
     z-index: 2;
     /* Place this image in front of the img1 */
     width: 100%;
-
     right: 100px;
     bottom: 50px;
+}
+
+.features {
+    background-color: rgba(201, 201, 201, 0.418) !important;
+    color: rgb(59, 59, 59) !important;
 }
 </style>

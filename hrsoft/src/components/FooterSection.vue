@@ -1,5 +1,5 @@
 <template>
-    <v-card style="background: linear-gradient(120deg, #0FA597 0%, #0F4EA5 100%);z-index:99" rounded="0" flat>
+    <v-card style="background: linear-gradient(120deg, #0FA597 0%, #0F4EA5 100%);z-index:99" rounded="0" flat id="contact">
         <v-container class="mr-md-16 ml-md-16 pl-md-16 pa-md-16">
             <v-row class="mr-md-10 ml-md-10">
                 <v-col cols="12" md="6" class="pr-16">
@@ -40,7 +40,7 @@
                             <div class="d-flex " width="100%">
                                 <v-btn class="mr-2">
                                     <v-icon icon="mdi-share-variant-outline"></v-icon></v-btn>
-                                <v-btn class="text-white flex-grow-1" color="#0BB4AF" type="submit">
+                                <v-btn class="text-white flex-grow-1" color="#0BB4AF">
                                     Book a Free Demo
                                 </v-btn>
                             </div>
